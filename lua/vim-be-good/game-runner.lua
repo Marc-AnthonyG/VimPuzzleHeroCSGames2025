@@ -14,7 +14,7 @@ Stats = statistics:new()
 local endStates = {
     menu = "Menu",
     replay = "Replay",
-    quit = "Quit (or just ZZ like a real man)",
+    quit = "Quit",
 }
 
 local states = {
@@ -183,7 +183,7 @@ function GameRunner:checkForNext()
 
     -- todo implement this correctly....
     if foundKey then
-       self.onFinished(self, foundKey)
+        self.onFinished(self, foundKey)
     else
         log.info("GameRunner:checkForNext Some line was changed that is insignificant, rerendering")
         self.window.buffer:render(expectedLines)
@@ -278,7 +278,7 @@ function GameRunner:renderEndGame()
 
     table.insert(lines, "Menu")
     table.insert(lines, "Replay")
-    table.insert(lines, "Quit (or just ZZ like a real man)")
+    table.insert(lines, "Quit")
 
     return lines, optionLine
 end
@@ -313,7 +313,7 @@ function GameRunner:run()
 
     log.info("Setting current line to", cursorLine, cursorCol)
     if cursorLine > 0 then
-        vim.api.nvim_win_set_cursor(0, {cursorLine, cursorCol})
+        vim.api.nvim_win_set_cursor(0, { cursorLine, cursorCol })
     end
 
     self.startTime = GameUtils.getTime()
@@ -334,8 +334,6 @@ function GameRunner:run()
 
         self:endRound()
     end, roundConfig.roundTime)
-
 end
 
 return GameRunner
-

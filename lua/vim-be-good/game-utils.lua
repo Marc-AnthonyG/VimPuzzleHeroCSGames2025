@@ -178,4 +178,3 @@ return {
     trimLines = trimLines,
     filterEmptyLines = filterEmptyLines,
 }
-

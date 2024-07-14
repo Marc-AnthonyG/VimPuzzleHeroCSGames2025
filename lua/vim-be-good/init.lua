@@ -75,14 +75,13 @@ local function menu()
                 endItAll()
             end
         end)
-
     end
 
     onMenuSelect = function(gameString, difficulty)
         menu:close()
 
         log.info("onResults", gameString, difficulty)
-        local gameRunner = GameRunner:new({gameString}, difficulty, windowHandler, function(game, nextState)
+        local gameRunner = GameRunner:new({ gameString }, difficulty, windowHandler, function(game, nextState)
             onGameFinish(gameString, difficulty, game, nextState)
         end)
 
@@ -99,5 +98,3 @@ return {
     menu = menu,
     onVimResize = onVimResize
 }
-
-

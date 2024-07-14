@@ -29,12 +29,10 @@ local instructions = {
 local credits = {
     "",
     "",
-    "Created by ThePrimeagen",
-    "Brandoncc",
-    "polarmutex",
-    "",
+    "This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen",
     "https://github.com/ThePrimeagen/vim-be-good",
-    "https://twitch.tv/ThePrimeagen",
+    "",
+    ""
 }
 
 function Menu:new(window, onResults)

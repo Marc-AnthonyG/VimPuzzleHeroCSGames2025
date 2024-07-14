@@ -40,12 +40,12 @@ end
 
 function Buffer:_scheduledOnLine()
     if self == nil or self.onChangeList == nil then
+        ---@diagnostic disable-next-line: need-check-nil
         log.info("Memory Leak...", self.bufh, self.window)
         return
     end
 
     for _, fn in ipairs(self.onChangeList) do
-
         local ok, errMessage = pcall(
             fn, buf, changedtick, firstline, lastline, linedata, more)
 
@@ -79,18 +79,15 @@ function Buffer:attach()
 end
 
 function Buffer:render(lines)
-
     local idx = 1
     local instructionLen = #self.instructions
-    local lastRenderedLen = #self.lastRendered
-    local lastRenderedInstructionLen = #self.lastRenderedInstruction
 
     self:clear()
     self.lastRendered = lines
 
     if self.debugLineStr ~= nil then
         vim.api.nvim_buf_set_lines(
-            self.bufh, 0, 1, false, {self.debugLineStr})
+            self.bufh, 0, 1, false, { self.debugLineStr })
     end
 
     if instructionLen > 0 then
@@ -146,7 +143,6 @@ function Buffer:onChange(cb)
 end
 
 function Buffer:removeListener(cb)
-
     local idx = 1
     local found = false
     while idx <= #self.onChangeList and found == false do
@@ -163,4 +159,3 @@ function Buffer:removeListener(cb)
 end
 
 return Buffer
-
