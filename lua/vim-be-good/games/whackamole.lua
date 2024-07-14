@@ -8,11 +8,10 @@ local instructions = {
 }
 
 local WhackAMoleRound = {}
-function WhackAMoleRound:new(difficulty, window)
-    log.info("New", difficulty, window)
+function WhackAMoleRound:new(window)
+    log.info("New", window)
     local round = {
         window = window,
-        difficulty = difficulty,
     }
 
     self.__index = self
@@ -25,9 +24,8 @@ function WhackAMoleRound:getInstructions()
 end
 
 function WhackAMoleRound:getConfig()
-    log.info("getConfig", self.difficulty, GameUtils.difficultyToTime[self.difficulty])
     return {
-        roundTime = GameUtils.difficultyToTime[self.difficulty]
+        roundTime = 10000
     }
 end
 
@@ -48,7 +46,7 @@ function WhackAMoleRound:render()
     local chosenLocation = 0
     while not foundLocation do
         local location = math.random(1, string.len(sentence))
-        if sentence:sub(location,location) ~= " " then
+        if sentence:sub(location, location) ~= " " then
             chosenLocation = location
             foundLocation = true
         end
@@ -56,8 +54,8 @@ function WhackAMoleRound:render()
 
     local pointerLine = ""
     local winSentence = ""
-    for idx=1, #sentence do
-        local c = sentence:sub(idx,idx)
+    for idx = 1, #sentence do
+        local c = sentence:sub(idx, idx)
         if idx == chosenLocation then
             pointerLine = pointerLine .. "^"
             if c == string.lower(c) then
@@ -67,14 +65,14 @@ function WhackAMoleRound:render()
             end
         else
             pointerLine = pointerLine .. " "
-            winSentence = winSentence  .. c
+            winSentence = winSentence .. c
         end
     end
     lines[2] = pointerLine
 
     self.__winLine = winSentence
 
-    local cursorIdx =  1
+    local cursorIdx = 1
 
     return lines, cursorIdx
 end
@@ -84,5 +82,3 @@ function WhackAMoleRound:name()
 end
 
 return WhackAMoleRound
-
-

@@ -14,7 +14,7 @@ Stats = statistics:new()
 local endStates = {
     menu = "Menu",
     replay = "Replay",
-    quit = "Quit (or just ZZ like a real man)",
+    quit = "Quit",
 }
 
 local states = {
@@ -23,24 +23,24 @@ local states = {
 }
 
 local games = {
-    ["ci{"] = function(difficulty, window)
-        return CiRound:new(difficulty, window)
+    ["ci{"] = function(window)
+        return CiRound:new(window)
     end,
 
-    relative = function(difficulty, window)
-        return RelativeRound:new(difficulty, window)
+    relative = function(window)
+        return RelativeRound:new(window)
     end,
 
-    words = function(difficulty, window)
-        return WordRound:new(difficulty, window)
+    words = function(window)
+        return WordRound:new(window)
     end,
 
-    hjkl = function(difficulty, window)
-        return HjklRound:new(difficulty, window)
+    hjkl = function(window)
+        return HjklRound:new(window)
     end,
 
-    whackamole = function(difficulty, window)
-        return WhackAMoleRound:new(difficulty, window)
+    whackamole = function(window)
+        return WhackAMoleRound:new(window)
     end,
 }
 
@@ -48,17 +48,16 @@ local runningId = 0
 
 local GameRunner = {}
 
-local function getGame(game, difficulty, window)
-    log.info("getGame", game, difficulty, window)
-    return games[game](difficulty, window)
+---@diagnostic disable-next-line: unused-local
+local function getGame(game, window)
+    log.info("getGame", game, window)
+    return games[game](window)
 end
 
--- games table, difficulty string
-function GameRunner:new(selectedGames, difficulty, window, onFinished)
-    log.info("New", difficulty)
+-- games table, string
+function GameRunner:new(selectedGames, window, onFinished)
     local config = {
-        difficulty = difficulty,
-        roundCount = GameUtils.getRoundCount(difficulty),
+        roundCount = GameUtils.getRoundCount(),
     }
 
     local rounds = {}
@@ -73,7 +72,7 @@ function GameRunner:new(selectedGames, difficulty, window, onFinished)
     end
 
     for idx = 1, #selectedGames do
-        table.insert(rounds, getGame(selectedGames[idx], difficulty, window))
+        table.insert(rounds, getGame(selectedGames[idx], window))
     end
 
     local gameRunner = {
@@ -183,7 +182,7 @@ function GameRunner:checkForNext()
 
     -- todo implement this correctly....
     if foundKey then
-       self.onFinished(self, foundKey)
+        self.onFinished(self, foundKey)
     else
         log.info("GameRunner:checkForNext Some line was changed that is insignificant, rerendering")
         self.window.buffer:render(expectedLines)
@@ -225,7 +224,6 @@ function GameRunner:endRound(success)
     local result = {
         timestamp = vim.fn.localtime(),
         roundNum = self.currentRound,
-        difficulty = self.round.difficulty,
         roundName = self.round:name(),
         success = success,
         time = totalTime,
@@ -278,7 +276,7 @@ function GameRunner:renderEndGame()
 
     table.insert(lines, "Menu")
     table.insert(lines, "Replay")
-    table.insert(lines, "Quit (or just ZZ like a real man)")
+    table.insert(lines, "Quit")
 
     return lines, optionLine
 end
@@ -313,7 +311,7 @@ function GameRunner:run()
 
     log.info("Setting current line to", cursorLine, cursorCol)
     if cursorLine > 0 then
-        vim.api.nvim_win_set_cursor(0, {cursorLine, cursorCol})
+        vim.api.nvim_win_set_cursor(0, { cursorLine, cursorCol })
     end
 
     self.startTime = GameUtils.getTime()
@@ -334,8 +332,6 @@ function GameRunner:run()
 
         self:endRound()
     end, roundConfig.roundTime)
-
 end
 
 return GameRunner
-

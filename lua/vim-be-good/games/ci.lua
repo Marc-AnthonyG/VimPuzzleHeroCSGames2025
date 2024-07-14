@@ -21,11 +21,10 @@ local instructions = {
 }
 
 local CiRound = {}
-function CiRound:new(difficulty, window)
-   log.info("New", difficulty, window)
+function CiRound:new(window)
+    log.info("New", window)
     local round = {
         window = window,
-        difficulty = difficulty,
     }
 
     self.__index = self
@@ -37,9 +36,8 @@ function CiRound:getInstructions()
 end
 
 function CiRound:getConfig()
-    log.info("getConfig", self.difficulty, GameUtils.difficultyToTime[self.difficulty])
     self.config = {
-        roundTime = GameUtils.difficultyToTime[self.difficulty],
+        roundTime = 10000,
         ifStatement = math.random() > 0.5,
         randomWord = GameUtils.getRandomWord(),
     }

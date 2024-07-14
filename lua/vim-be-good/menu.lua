@@ -1,7 +1,6 @@
 local log = require("vim-be-good.log")
 local bind = require("vim-be-good.bind")
 local types = require("vim-be-good.types")
-local createEmpty = require("vim-be-good.game-utils").createEmpty
 
 local Menu = {}
 
@@ -9,13 +8,6 @@ local gameHeader = {
     "",
     "Select a Game (delete from the list to select)",
     "----------------------------------------------",
-}
-
-local difficultyHeader = {
-    "",
-    "Select a Difficulty (delete from the list to select)",
-    "Noob difficulty is endless so it must be quit with :q",
-    "----------------------------------------------------",
 }
 
 local instructions = {
@@ -29,12 +21,10 @@ local instructions = {
 local credits = {
     "",
     "",
-    "Created by ThePrimeagen",
-    "Brandoncc",
-    "polarmutex",
-    "",
+    "This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen",
     "https://github.com/ThePrimeagen/vim-be-good",
-    "https://twitch.tv/ThePrimeagen",
+    "",
+    ""
 }
 
 function Menu:new(window, onResults)
@@ -42,10 +32,6 @@ function Menu:new(window, onResults)
         window = window,
         buffer = window.buffer,
         onResults = onResults,
-
-        -- easy
-        difficulty = types.difficulty[2],
-
         -- relative
         game = types.games[1],
     }
@@ -63,8 +49,7 @@ function Menu:new(window, onResults)
 end
 
 local function getMenuLength()
-    return #types.games + #types.difficulty + #gameHeader +
-        #difficultyHeader + #credits
+    return #types.games + #gameHeader + #credits
 end
 
 local function getTableChanges(lines, compareSet, startIdx)
@@ -105,25 +90,12 @@ function Menu:onChange()
     if found then
         self.game = types.games[i]
 
-        log.info("Starting Game", self.game, self.difficulty)
-        ok, msg = pcall(self.onResults, self.game, self.difficulty)
+        log.info("Starting Game", self.game)
+        ok, msg = pcall(self.onResults, self.game,)
 
         if not ok then
             log.info("Menu:onChange error", msg)
         end
-        return
-    end
-
-    found, i, idx = getTableChanges(lines, difficultyHeader, idx)
-    if found then
-        self:render()
-        return
-    end
-
-    found, i, idx = getTableChanges(lines, types.difficulty, idx)
-    if found then
-        self.difficulty = types.difficulty[i]
-        self:render()
         return
     end
 end
@@ -138,21 +110,13 @@ end
 function Menu:render()
     self.window.buffer:clearGameLines()
 
-    local lines = { }
+    local lines = {}
     for idx = 1, #gameHeader do
         table.insert(lines, gameHeader[idx])
     end
 
     for idx = 1, #types.games do
         table.insert(lines, createMenuItem(types.games[idx], self.game))
-    end
-
-    for idx = 1, #difficultyHeader do
-        table.insert(lines, difficultyHeader[idx])
-    end
-
-    for idx = 1, #types.difficulty do
-        table.insert(lines, createMenuItem(types.difficulty[idx], self.difficulty))
     end
 
     for idx = 1, #credits do
@@ -167,4 +131,3 @@ function Menu:close()
 end
 
 return Menu
-
