@@ -58,7 +58,7 @@ local function menu()
         menu:render()
     end
 
-    onGameFinish = function(gameString, difficulty, game, nextState)
+    onGameFinish = function(gameString, game, nextState)
         log.info("Ending it from the game baby!", nextState)
 
         vim.schedule(function()
@@ -70,19 +70,19 @@ local function menu()
                 end, 0)
             elseif nextState == "replay" then
                 game:close()
-                onMenuSelect(gameString, difficulty)
+                onMenuSelect(gameString)
             else
                 endItAll()
             end
         end)
     end
 
-    onMenuSelect = function(gameString, difficulty)
+    onMenuSelect = function(gameString)
         menu:close()
 
-        log.info("onResults", gameString, difficulty)
-        local gameRunner = GameRunner:new({ gameString }, difficulty, windowHandler, function(game, nextState)
-            onGameFinish(gameString, difficulty, game, nextState)
+        log.info("onResults", gameString)
+        local gameRunner = GameRunner:new({ gameString }, windowHandler, function(game, nextState)
+            onGameFinish(gameString, game, nextState)
         end)
 
         ok, msg = pcall(function() gameRunner:init() end, debug.traceback)

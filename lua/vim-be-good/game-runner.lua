@@ -49,17 +49,15 @@ local runningId = 0
 local GameRunner = {}
 
 ---@diagnostic disable-next-line: unused-local
-local function getGame(game, difficulty, window)
+local function getGame(game, window)
     log.info("getGame", game, window)
     return games[game](window)
 end
 
--- games table, difficulty string
-function GameRunner:new(selectedGames, difficulty, window, onFinished)
-    log.info("New", difficulty)
+-- games table, string
+function GameRunner:new(selectedGames, window, onFinished)
     local config = {
-        difficulty = difficulty,
-        roundCount = GameUtils.getRoundCount(difficulty),
+        roundCount = GameUtils.getRoundCount(),
     }
 
     local rounds = {}
@@ -74,7 +72,7 @@ function GameRunner:new(selectedGames, difficulty, window, onFinished)
     end
 
     for idx = 1, #selectedGames do
-        table.insert(rounds, getGame(selectedGames[idx], difficulty, window))
+        table.insert(rounds, getGame(selectedGames[idx], window))
     end
 
     local gameRunner = {
@@ -226,7 +224,6 @@ function GameRunner:endRound(success)
     local result = {
         timestamp = vim.fn.localtime(),
         roundNum = self.currentRound,
-        difficulty = self.round.difficulty,
         roundName = self.round:name(),
         success = success,
         time = totalTime,

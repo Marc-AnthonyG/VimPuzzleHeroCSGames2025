@@ -92,14 +92,8 @@ local function getTime()
     return vim.fn.reltimefloat(vim.fn.reltime())
 end
 
-local function getRoundCount(difficulty)
-    local roundCount = vim.g["vim-be-good-round-count"] or 10
-
-    if difficulty == "noob" then
-        roundCount = 100000
-    end
-
-    return roundCount
+local function getRoundCount()
+    return vim.g["vim-be-good-round-count"] or 10
 end
 
 local function getRandomInsertionLocation(lineCount, textLines, topOffset)

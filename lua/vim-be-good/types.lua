@@ -1,12 +1,3 @@
-local difficulty = {
-    "noob",
-    "easy",
-    "medium",
-    "hard",
-    "nightmare",
-    "tpope",
-}
-
 local games = {
     "words",
     "ci{",
@@ -17,6 +8,5 @@ local games = {
 }
 
 return {
-    difficulty = difficulty,
     games = games
 }
