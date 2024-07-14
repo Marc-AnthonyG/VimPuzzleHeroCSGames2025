@@ -1,5 +1,6 @@
 #!/bin/sh
 
 while :; do
-    socat -dd -T1800 tcp-l:1337,reuseaddr,fork,keepalive exec:"nvim -u ./init.vim",pty,stderr
+    ttyd --writable -p 1337 nvim -u ./init.vim
+    sleep 1
 done
