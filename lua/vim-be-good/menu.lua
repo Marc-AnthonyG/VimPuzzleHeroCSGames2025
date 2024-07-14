@@ -91,7 +91,7 @@ function Menu:onChange()
         self.game = types.games[i]
 
         log.info("Starting Game", self.game)
-        ok, msg = pcall(self.onResults, self.game,)
+        ok, msg = pcall(self.onResults, self.game)
 
         if not ok then
             log.info("Menu:onChange error", msg)
