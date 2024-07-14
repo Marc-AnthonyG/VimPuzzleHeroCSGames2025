@@ -27,12 +27,12 @@ function Words:getConfig()
 
     local one = GameUtils.getRandomWord()
     local two = GameUtils.getRandomWord()
-    while(two == one)
-	do
-		two = GameUtils.getRandomWord()
-	end 
-    local round = { }
-    local expected = { }
+    while (two == one)
+    do
+        two = GameUtils.getRandomWord()
+    end
+    local round = {}
+    local expected = {}
     local idx = math.ceil(math.random() * 6);
     for i = 1, 6 do
         if i == idx then
@@ -81,4 +81,3 @@ function Words:name()
 end
 
 return Words
-

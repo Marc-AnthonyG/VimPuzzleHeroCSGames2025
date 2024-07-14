@@ -1,4 +1,3 @@
-
 local difficultyToTime = {
     ["noob"] = 100000,
     ["easy"] = 10000,

@@ -20,4 +20,3 @@ return {
     difficulty = difficulty,
     games = games
 }
-

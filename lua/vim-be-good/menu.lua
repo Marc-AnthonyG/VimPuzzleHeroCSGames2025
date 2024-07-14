@@ -136,7 +136,7 @@ end
 function Menu:render()
     self.window.buffer:clearGameLines()
 
-    local lines = { }
+    local lines = {}
     for idx = 1, #gameHeader do
         table.insert(lines, gameHeader[idx])
     end
@@ -165,4 +165,3 @@ function Menu:close()
 end
 
 return Menu
-
