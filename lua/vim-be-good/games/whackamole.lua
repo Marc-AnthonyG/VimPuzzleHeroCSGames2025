@@ -8,11 +8,10 @@ local instructions = {
 }
 
 local WhackAMoleRound = {}
-function WhackAMoleRound:new(difficulty, window)
-    log.info("New", difficulty, window)
+function WhackAMoleRound:new(window)
+    log.info("New", window)
     local round = {
         window = window,
-        difficulty = difficulty,
     }
 
     self.__index = self
@@ -25,9 +24,8 @@ function WhackAMoleRound:getInstructions()
 end
 
 function WhackAMoleRound:getConfig()
-    log.info("getConfig", self.difficulty, GameUtils.difficultyToTime[self.difficulty])
     return {
-        roundTime = GameUtils.difficultyToTime[self.difficulty]
+        roundTime = 10000
     }
 end
 

@@ -1,12 +1,3 @@
-local difficultyToTime = {
-    ["noob"] = 100000,
-    ["easy"] = 10000,
-    ["medium"] = 8000,
-    ["hard"] = 6000,
-    ["nightmare"] = 4000,
-    ["tpope"] = 2000,
-}
-
 local extraSentences = {
     "One is the best Prime Number",
     "If one is the best prime number then actually eleven is because it is two ones",
@@ -165,7 +156,6 @@ local function filterEmptyLines(lines)
 end
 
 return {
-    difficultyToTime = difficultyToTime,
     getRoundCount = getRoundCount,
     getRandomInsertionLocation = getRandomInsertionLocation,
     getRandomWord = getRandomWord,

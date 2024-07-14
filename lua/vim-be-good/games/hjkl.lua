@@ -1,15 +1,6 @@
 local GameUtils = require("vim-be-good.game-utils")
 local log = require("vim-be-good.log")
 
-local boardSizeOptions = {
-    noob = 3,
-    easy = 5,
-    medium = 7,
-    hard = 8,
-    nightmare = 9,
-    tpope = 10
-}
-
 local instructions = {
     "Remove the x with using only h,j,k,l, and x. Remember, this is for you to be bettter.",
     "Using the arrow keys only makes you dumber. Trust me, I am a scientist",
@@ -17,11 +8,10 @@ local instructions = {
 }
 
 local HjklRound = {}
-function HjklRound:new(difficulty, window)
-    log.info("New", difficulty, window)
+function HjklRound:new(window)
+    log.info("New", window)
     local round = {
         window = window,
-        difficulty = difficulty,
     }
 
     self.__index = self
@@ -33,9 +23,8 @@ function HjklRound:getInstructions()
 end
 
 function HjklRound:getConfig()
-    log.info("getConfig", self.difficulty, GameUtils.difficultyToTime[self.difficulty])
     return {
-        roundTime = GameUtils.difficultyToTime[self.difficulty]
+        roundTime = 6000
     }
 end
 
@@ -60,7 +49,7 @@ function HjklRound:checkForWin()
 end
 
 function HjklRound:render()
-    local boardSize = boardSizeOptions[self.difficulty]
+    local boardSize = 8
     log.info("HjklRound:render: " .. boardSize)
     local lines = GameUtils.createEmpty(boardSize)
 

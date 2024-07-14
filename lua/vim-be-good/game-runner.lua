@@ -23,24 +23,24 @@ local states = {
 }
 
 local games = {
-    ["ci{"] = function(difficulty, window)
-        return CiRound:new(difficulty, window)
+    ["ci{"] = function(window)
+        return CiRound:new(window)
     end,
 
-    relative = function(difficulty, window)
-        return RelativeRound:new(difficulty, window)
+    relative = function(window)
+        return RelativeRound:new(window)
     end,
 
-    words = function(difficulty, window)
-        return WordRound:new(difficulty, window)
+    words = function(window)
+        return WordRound:new(window)
     end,
 
-    hjkl = function(difficulty, window)
-        return HjklRound:new(difficulty, window)
+    hjkl = function(window)
+        return HjklRound:new(window)
     end,
 
-    whackamole = function(difficulty, window)
-        return WhackAMoleRound:new(difficulty, window)
+    whackamole = function(window)
+        return WhackAMoleRound:new(window)
     end,
 }
 
@@ -48,9 +48,10 @@ local runningId = 0
 
 local GameRunner = {}
 
+---@diagnostic disable-next-line: unused-local
 local function getGame(game, difficulty, window)
-    log.info("getGame", game, difficulty, window)
-    return games[game](difficulty, window)
+    log.info("getGame", game, window)
+    return games[game](window)
 end
 
 -- games table, difficulty string

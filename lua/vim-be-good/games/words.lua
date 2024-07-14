@@ -7,11 +7,10 @@ local instructions = {
 }
 
 local Words = {}
-function Words:new(difficulty, window)
-    log.info("NewWords", difficulty, window)
+function Words:new(window)
+    log.info("NewWords", window)
     local round = {
         window = window,
-        difficulty = difficulty,
     }
 
     self.__index = self
@@ -23,8 +22,6 @@ function Words:getInstructions()
 end
 
 function Words:getConfig()
-    log.info("getConfig", self.difficulty, GameUtils.difficultyToTime[self.difficulty])
-
     local one = GameUtils.getRandomWord()
     local two = GameUtils.getRandomWord()
     while (two == one)
@@ -44,7 +41,7 @@ function Words:getConfig()
     end
 
     self.config = {
-        roundTime = GameUtils.difficultyToTime[self.difficulty],
+        roundTime = 10000,
         words = round,
         expected = table.concat(expected, " ")
     }
