@@ -1,8 +1,5 @@
-call plug#begin(stdpath('data') . '/plugged')
-Plug '/usr/src'
-call plug#end()
+source /usr/src/plugin/vim-be-good.vim
 
 set relativenumber
 
 set background=dark
-
