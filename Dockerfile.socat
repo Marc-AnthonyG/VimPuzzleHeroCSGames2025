@@ -12,6 +12,6 @@ COPY . .
 
 RUN nvim -u init.vim +'PlugInstall --sync' +qa
 
-RUN chmod +x /usr/src/run.sh
+RUN chmod +x /usr/src/run_socat.sh
 
-ENTRYPOINT ["/usr/src/run.sh"]
+ENTRYPOINT ["/usr/src/run_socat.sh"]
