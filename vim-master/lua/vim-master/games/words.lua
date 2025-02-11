@@ -75,7 +75,7 @@ function Words:checkForLose()
 	local concatenated = table.concat(GameUtils.filterEmptyLines(trimmed), "")
 	local lowercased = concatenated:lower()
 
-	local lost = lowercased ~= self.config.default and not self.checkForWin()
+	local lost = lowercased ~= self.config.default and not self:checkForWin()
 
 	if lost then
 		vim.cmd("stopinsert")
@@ -94,6 +94,8 @@ function Words:render()
 end
 
 Words.flag = "CSGAMES-d542d95c58b0048295422b46cf0a4a93"
+
+Words.lostReason = "You deleted the wrong word!"
 
 Words.timeToWin = 20
 

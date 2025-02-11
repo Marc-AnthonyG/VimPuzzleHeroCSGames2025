@@ -8,6 +8,7 @@
 ---@field flag string
 ---@field window Window
 ---@field timeToWin number
+---@field lostReason string
 
 
 ---@class GameExplanation

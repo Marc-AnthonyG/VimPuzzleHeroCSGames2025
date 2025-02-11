@@ -39,6 +39,7 @@ local runningId = 0
 ---@field running boolean
 ---@field startTime number
 ---@field ended boolean
+---@field hasLost boolean
 ---@field onChange function
 local GameRunner = {}
 
@@ -68,7 +69,8 @@ function GameRunner:new(selectedGames, window, onFinished)
         results = {
             timings = {},
         },
-        state = states.playing
+        state = states.playing,
+        hasLost = false,
     }
 
     self.__index = self
@@ -245,16 +247,14 @@ function GameRunner:checkForWinOrLost()
         return
     end
 
-    --if self.round:checkForLose() then
-    --self:endRound()
-    --self:endRound(false) end game
-    --end
-
-    if not self.round:checkForWin() then
-        return
+    if self.round:checkForLose() then
+        self.hasLost = true
+        self:endGame()
     end
 
-    self:endRound()
+    if self.round:checkForWin() then
+        self:endRound()
+    end
 end
 
 function GameRunner:endRound()
@@ -299,7 +299,9 @@ function GameRunner:renderEndGame()
 
     table.insert(lines, string.format("Time to complete %.2f", total_time))
 
-    if total_time < self.round.timeToWin then
+    if self.hasLost then
+        table.insert(lines, string.format("You lost! %s", self.round.lostReason))
+    elseif total_time < self.round.timeToWin then
         table.insert(lines, string.format("Wow so fast here is the flag %s", self.round.flag))
     else
         table.insert(string.format("You have to beat %s second to get my flag!", self.round.timeToWin))
