@@ -59,7 +59,7 @@ function GameRunner:new(selectedGames, window, onFinished)
         table.insert(rounds, getGame(selectedGames[idx], window))
     end
 
-    local gameRunner = {
+    local gameRunnerBase = {
         currentRound = 1,
         rounds = rounds,
         config = config,
@@ -72,7 +72,7 @@ function GameRunner:new(selectedGames, window, onFinished)
     }
 
     self.__index = self
-    local game = setmetatable(gameRunner, self)
+    local gameRunner = setmetatable(gameRunnerBase, self)
 
     local function onChange()
         -- Close game if user exit plugin
@@ -83,21 +83,21 @@ function GameRunner:new(selectedGames, window, onFinished)
             return
         end
 
-        if game.state == states.explanation then
-            if game:checkExplanationAcknowledged() then
-                game.state = states.playing
-                game:countdown(3, function() game:run() end)
+        if gameRunner.state == states.explanation then
+            if gameRunner:checkExplanationAcknowledged() then
+                gameRunner.state = states.playing
+                gameRunner:countdown(3, function() gameRunner:run() end)
             end
-        elseif game.state == states.playing then
-            game:checkForWin()
+        elseif gameRunner.state == states.playing then
+            gameRunner:checkForWinOrLost()
         else
-            game:checkForNext()
+            gameRunner:checkForNext()
         end
     end
 
-    game.onChange = onChange
+    gameRunner.onChange = onChange
     window.buffer:onChange(onChange)
-    return game
+    return gameRunner
 end
 
 function GameRunner:countdown(count, cb)
@@ -235,7 +235,7 @@ function GameRunner:checkForNext()
     end
 end
 
-function GameRunner:checkForWin()
+function GameRunner:checkForWinOrLost()
     log.info("GameRunner:checkForWin", self.round, self.running)
     if not self.round then
         return
@@ -245,16 +245,19 @@ function GameRunner:checkForWin()
         return
     end
 
+    --if self.round:checkForLose() then
+    --self:endRound()
+    --self:endRound(false) end game
+    --end
+
     if not self.round:checkForWin() then
         return
     end
 
-    self:endRound(true)
+    self:endRound()
 end
 
-function GameRunner:endRound(success)
-    success = success or false
-
+function GameRunner:endRound()
     self.running = false
 
     local endTime = GameUtils.getTime()
@@ -326,7 +329,7 @@ end
 function GameRunner:run()
     local idx = math.random(1, #self.rounds)
     self.round = self.rounds[idx]
-    local roundConfig = self.round:getConfig()
+    self.round:setupGame()
 
     self.window.buffer:debugLine(string.format(
         "Round %d / %d", self.currentRound, self.config.roundCount))

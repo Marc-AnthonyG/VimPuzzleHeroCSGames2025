@@ -1,16 +1,10 @@
 local GameUtils = require("vim-master.game-utils")
 local log = require("vim-master.log")
-local gameLineCount = 5
-
-local instructions = {
-	"use w, b, 0, $ and d to delete the different word in the line. Be careful to only delete the different word!",
-}
 
 ---@class WordConfig
 ---@field roundTime number
 ---@field words string[]
 ---@field expected string
-
 
 ---@class Words: Game
 local Words = {}
@@ -29,10 +23,10 @@ function Words:new(window)
 end
 
 function Words:getInstructionsSummary()
-	return instructions
+	return { "use w, b, 0, $ and d to delete the different word in the line. Be careful to only delete the different word!", }
 end
 
-function Words:getConfig()
+function Words:setupGame()
 	local one = GameUtils.getRandomWord()
 	local two = GameUtils.getRandomWord()
 	while (two == one)
@@ -53,7 +47,8 @@ function Words:getConfig()
 
 	self.config = {
 		words = round,
-		expected = table.concat(expected, " ")
+		expected = table.concat(expected, " "),
+		default = table.concat(round, " ")
 	}
 
 	return self.config
@@ -74,8 +69,23 @@ function Words:checkForWin()
 	return winner
 end
 
+function Words:checkForLose()
+	local lines = self.window.buffer:getGameLines()
+	local trimmed = GameUtils.trimLines(lines)
+	local concatenated = table.concat(GameUtils.filterEmptyLines(trimmed), "")
+	local lowercased = concatenated:lower()
+
+	local lost = lowercased ~= self.config.default and not self.checkForWin()
+
+	if lost then
+		vim.cmd("stopinsert")
+	end
+
+	return lost
+end
+
 function Words:render()
-	local lines = GameUtils.createEmpty(gameLineCount)
+	local lines = GameUtils.createEmpty(5)
 	local cursorIdx = 5
 
 	lines[5] = table.concat(self.config.words, " ")
