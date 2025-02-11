@@ -1,0 +1,3076 @@
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "24,0-1        All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "~@k" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,1          All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "~@k" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "22,0-1        All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "~@k" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "V" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL LINE --" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "D" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,0-1        All" } }
+}
+{ { { 0, "[VimMasterChallenge] [INFO  22:38:52] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"\", \"Delete this line to start the game\", \"\" }" } }, false,
+  event = "msg_show",
+  kind = "echomsg"
+}
+{ { { 0, "[VimMasterChallenge] [INFO  22:38:52] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:108: Buffer:Rendering" } }, true,
+  event = "msg_show",
+  kind = "echomsg"
+}
+{ { { 0, "[VimMasterChallenge] [INFO  22:38:52] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } }, true,
+  event = "msg_show",
+  kind = "echomsg"
+}
+{ { { 0, "[VimMasterChallenge] [INFO  22:38:52] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } }, true,
+  event = "msg_show",
+  kind = "echomsg"
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "V" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL LINE --" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "D" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_clear"
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,0-1        All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,0-1        All" } }
+}
+{ { { 0, "[VimMasterChallenge] [INFO  22:38:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"\", \"Delete this line to start the game\", \"\" }" } }, false,
+  event = "msg_show",
+  kind = "echomsg"
+}
+{ { { 0, "[VimMasterChallenge] [INFO  22:38:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:108: Buffer:Rendering" } }, true,
+  event = "msg_show",
+  kind = "echomsg"
+}
+{ { { 0, "[VimMasterChallenge] [INFO  22:38:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } }, true,
+  event = "msg_show",
+  kind = "echomsg"
+}
+{ { { 0, "[VimMasterChallenge] [INFO  22:38:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } }, true,
+  event = "msg_show",
+  kind = "echomsg"
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "21,1          All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,106         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,106         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,106         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,106         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,106         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,106         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912-106     All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912-106     All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "807" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "3,912         All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_clear"
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "1,0-1         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "1" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "1,0-1         All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = { { 102, "-- VISUAL --" } }
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "1,0-1         All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "1" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, ":" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 9, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 8
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 8, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 8, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 8, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 8, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 8, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 8, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 8, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 8, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 7
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 7, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 7, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 7, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 7, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 7, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 7, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 7, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 6
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 6, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 6, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 6, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 6, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 6, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 6, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 5
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 5, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 5, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 5, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 5, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 5, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 5, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 5, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 4
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 4, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 4, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 4, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 4, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 4, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 4, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 4, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 4, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 3
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 3, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 3, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 3, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 3, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 3, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 3, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 2
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 2, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 2, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 2, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 2, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 2, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 2, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 2, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 2, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 1
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 0
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1,
+  event = "cmdline_pos",
+  kind = 1
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, ":messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "messages" } }
+}
+{
+  event = "cmdline_hide",
+  kind = 1
+}
+{
+  event = "msg_history_show",
+  kind = { { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:49] ...lenges/vim/VimMaster1/vim-master/lua/vim-master/init.lua:19: ------------------ STARTING THE GAME -----------------------------" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:49] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:108: Buffer:Rendering" } } }, { "echomsg", { { 0, '[VimMasterChallenge] [INFO  22:37:49] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 6 10 { "", "Select a Game (delete from the list to select)", "----------------------------------------------", "[x] words", "", "", "This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen", "https://github.com/ThePrimeagen/vim-master", "", "" }' } } }, { "echomsg", { { 0, '[VimMasterChallenge] [INFO  22:37:49] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 6 10 { "", "Select a Game (delete from the list to select)", "----------------------------------------------", "[x] words", "", "", "This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen", "https://github.com/ThePrimeagen/vim-master", "", "" }' } } }, { "echomsg", { { 0, '[VimMasterChallenge] [INFO  22:37:49] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 6 10 { "", "Select a Game (delete from the list to select)", "----------------------------------------------", "[x] words", "", "", "This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen", "https://github.com/ThePrimeagen/vim-master", "", "" }' } } }, { "echomsg", { { 0, '[VimMasterChallenge] [INFO  22:37:49] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 6 10 { "", "Select a Game (delete from the list to select)", "----------------------------------------------", "[x] words", "", "", "This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen", "https://github.com/ThePrimeagen/vim-master", "", "" }' } } }, { "echomsg", { { 0, '[VimMasterChallenge] [INFO  22:37:49] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 6 10 { "", "Select a Game (delete from the list to select)", "----------------------------------------------", "[x] words", "", "", "This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen", "https://github.com/ThePrimeagen/vim-master", "", "" }' } } }, { "echomsg", { { 0, '[VimMasterChallenge] [INFO  22:37:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 6 10 { "", "Select a Game (delete from the list to select)", "----------------------------------------------", "", "", "This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen", "https://github.com/ThePrimeagen/vim-master", "", "" }' } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...lenges/vim/VimMaster1/vim-master/lua/vim-master/menu.lua:81: Menu:onChange initial instructions false 4 4" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...lenges/vim/VimMaster1/vim-master/lua/vim-master/menu.lua:89: Menu:onChange game changes true 1 4" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...lenges/vim/VimMaster1/vim-master/lua/vim-master/menu.lua:93: Starting Game words" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:167: Buffer:removeListener removing listener" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...lenges/vim/VimMaster1/vim-master/lua/vim-master/init.lua:81: onResults words" } } }, { "echomsg", { { 0, '[VimMasterChallenge] [INFO  22:37:54] ...vim/VimMaster1/vim-master/lua/vim-master/game-runner.lua:57: GameRunner:new { "words" }' } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...vim/VimMaster1/vim-master/lua/vim-master/game-runner.lua:47: getGame words table: 0x01050a8530" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...vim/VimMaster1/vim-master/lua/vim-master/games/words.lua:22: NewWords table: 0x01050a8530" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:108: Buffer:Rendering" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:37:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:01] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:11] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"ds\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:11] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:108: Buffer:Rendering" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:11] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:11] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:11] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"a\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:11] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:108: Buffer:Rendering" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:11] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:11] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:52] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"\", \"Delete this line to start the game\", \"\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:52] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:108: Buffer:Rendering" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:52] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:52] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"\", \"Delete this line to start the game\", \"\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:108: Buffer:Rendering" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } }, { "echomsg", { { 0, "[VimMasterChallenge] [INFO  22:38:54] ...nges/vim/VimMaster1/vim-master/lua/vim-master/buffer.lua:140: Buffer:getGameLines 1 22 { \"============================================================\", \"Welcome to Word Master Challenge\", \"============================================================\", \"\", \"In this game, you'll be presented with a line of similar words.\", \"One word in the line is different from the others.\", \"Your task is to delete the different word using Vim motions.\", \"\", \"Examples:\", \"Example: If you see: 'bar bar foo bar bar bar'\", \"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete\", \"\", \"Controls:\", \"w - Move to next word\", \"b - Move to previous word\", \"0 - Move to start of line\", \"$ - Move to end of line\", \"dw - Delete word\", \"\", \"------------------------------------------------------------\", \"\", \"Delete this line to start the game\" }" } } } }
+}
+{
+  event = "msg_clear"
+}
+{
+  event = "msg_history_clear"
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_ruler",
+  kind = { { 1, "23,34         All" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, ":" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{
+  event = "cmdline_hide",
+  kind = 1
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "q" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, "q:" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "cmdline_hide",
+  kind = 1
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, ":q" } }
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, ":q^M" } }
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, ":" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 2,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{
+  event = "cmdline_hide",
+  kind = 2
+}
+{
+  event = "msg_showcmd",
+  kind = {}
+}
+{
+  event = "cmdline_hide",
+  kind = 1
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showcmd",
+  kind = { { 0, ":" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 0, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{
+  event = "msg_showmode",
+  kind = {}
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{ 1, ":", "", 0, 1,
+  event = "cmdline_show",
+  kind = { { 0, "q" } }
+}
+{
+  event = "cmdline_hide",
+  kind = 1
+}

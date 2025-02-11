@@ -1,0 +1,22 @@
+# Name of the challenge
+name: "Vim Master Challenge: Words"
+
+# This key isn't optional, but you can set it to 'anonymous' if you want to stay anonymous.
+author: "Marc-Anthony Girard"    
+
+# Description of the challenge (Markdown supported).
+description: "Prove your skill! format : 'CSGames-XX'"
+
+
+# Flags specify answers that your challenge use.
+# Accepts strings or dictionaries of CTFd API data
+# !! YOU NEED AT LEAST ONE FLAG !!
+flags: 
+    - CSGAMES-d542d95c58b0048295422b46cf0a4a93
+
+
+# Tags are used to provide additional public tagging to a challenge
+# Accepts strings
+# !! YOU NEED AT LEAST ONE TAG !!
+tags:
+    - vim 

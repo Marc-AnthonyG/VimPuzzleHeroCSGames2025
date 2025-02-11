@@ -1,0 +1,8 @@
+services:
+  vim-master:
+    build:
+      context: .
+    container_name: vim-master-playground
+    restart: unless-stopped
+    ports:
+      - "5001:1337"
