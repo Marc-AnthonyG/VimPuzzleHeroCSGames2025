@@ -4,7 +4,6 @@
 
 # Know bug
 - Repair selection of ready for game
-- Remove the go next for round
 - spy on input to fail game
 - display timer
 
