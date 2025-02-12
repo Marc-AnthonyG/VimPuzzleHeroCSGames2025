@@ -23,7 +23,7 @@ function Words:new(window)
 end
 
 function Words:getInstructionsSummary()
-	return { "use w, b, 0, $ and d to delete the different word in the line. Be careful to only delete the different word!", }
+	return { "use w, b, 0, $ and d to delete the different word in the line. Be careful to only delete the different word!" }
 end
 
 function Words:setupGame()

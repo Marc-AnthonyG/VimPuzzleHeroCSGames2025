@@ -16,7 +16,9 @@ end
 ---@field clear fun(self: Buffer) Clear the buffer
 ---@field getGameLines fun(self: Buffer): string[] Get the current game lines
 ---@field setInstructions fun(self: Buffer, lines: string[]) Set instruction lines
+---@field renderInstructions fun(self: Buffer) Render instruction lines
 ---@field render fun(self: Buffer, lines: string[]) Render lines to buffer
+---@field instructions string[] Instructions to display
 local Buffer = {}
 
 ---Creates a new Words game instance
@@ -105,8 +107,16 @@ function Buffer:render(lines)
         idx = idx + instructionLen
     end
 
-    log.info("Buffer:Rendering")
+    log.trace("Buffer:Rendering")
     vim.api.nvim_buf_set_lines(self.bufh, idx, idx + #lines, false, lines)
+end
+
+function Buffer:renderInstructions()
+    local instructionLen = #self.instructions
+    if instructionLen > 0 then
+        vim.api.nvim_buf_set_lines(
+            self.bufh, 1, 1 + instructionLen, false, self.instructions)
+    end
 end
 
 function Buffer:debugLine(line)
