@@ -82,7 +82,10 @@ function GameRunner:new(selectedGames, window, onFinished)
         if gameRunner.state == states.explanation then
             if gameRunner:checkExplanationAcknowledged() then
                 gameRunner.state = states.playing
-                gameRunner:countdown(3, function() gameRunner:run() end)
+                gameRunner:countdown(3, function()
+                    self.startTime = GameUtils.getTime()
+                    gameRunner:run()
+                end)
             end
         elseif gameRunner.state == states.playing then
             gameRunner:checkForWinOrLost()
@@ -180,7 +183,6 @@ function GameRunner:checkExplanationAcknowledged()
     local stillHasAknowledged = false
 
     for _, line in ipairs(lines) do
-        log.info("Checking line", line)
         if line == gameInstructionAknowledged then
             stillHasAknowledged = true
             break
@@ -233,7 +235,6 @@ function GameRunner:checkForNext()
 end
 
 function GameRunner:checkForWinOrLost()
-    log.info("GameRunner:checkForWin", self.round, self.running)
     if not self.round then
         return
     end
@@ -254,10 +255,6 @@ end
 
 function GameRunner:endRound()
     self.running = false
-
-    local endTime = GameUtils.getTime()
-    local totalTime = endTime - self.startTime
-    table.insert(self.results.timings, totalTime)
 
     log.info("endRound", self.currentRound, self.config.roundCount)
     if self.currentRound >= self.config.roundCount then -- TODO: self.config.roundCount then
@@ -284,19 +281,18 @@ function GameRunner:renderEndGame()
         "Round %d / %d", self.currentRound, self.config.roundCount))
 
     local lines = {}
-    local total_time = 0
 
-    for idx = 1, #self.results.timings do
-        total_time = total_time + self.results.timings[idx]
-    end
+    local endTime = GameUtils.getTime()
+    local totalTime = endTime - self.startTime
+    log.info("Total time", totalTime)
 
     self.ended = true
 
-    table.insert(lines, string.format("Time to complete %.2f", total_time))
+    table.insert(lines, string.format("Time to complete %.2f", totalTime))
 
     if self.hasLost then
         table.insert(lines, string.format("You lost! %s", self.round.lostReason))
-    elseif total_time < self.round.timeToWin then
+    elseif totalTime < self.round.timeToWin then
         table.insert(lines, string.format("Wow so fast here is the flag %s", self.round.flag))
     else
         table.insert(string.format("You have to beat %s second to get my flag!", self.round.timeToWin))
@@ -347,10 +343,38 @@ function GameRunner:run()
         vim.api.nvim_win_set_cursor(0, { cursorLine, cursorCol })
     end
 
-    self.startTime = GameUtils.getTime()
-
     runningId = runningId + 1
     self.running = true
+    self:timer()
+end
+
+function GameRunner:timer()
+    local ok, msg = pcall(function()
+        if not self.ended then
+            local endTime = GameUtils.getTime()
+            local totalTime = endTime - self.startTime
+
+            if not totalTime then
+                totalTime = 0
+            end
+
+            local str = string.format("Timer: %d", totalTime)
+
+            local lines = self.round.getInstructionsSummary()
+            vim.list_extend(lines, { str })
+
+            self.window.buffer:setInstructions(lines)
+            self.window.buffer:renderInstructions()
+
+            vim.defer_fn(function()
+                self:timer()
+            end, 1000)
+        end
+    end)
+
+    if not ok then
+        log.info("Error: GameRunner#countdown", msg)
+    end
 end
 
 return GameRunner

@@ -4,7 +4,6 @@
 
 # TODO feature
 - spy on input to fail game
-- display timer
 
 
 # How to make a difer function
