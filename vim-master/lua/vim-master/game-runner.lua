@@ -197,9 +197,24 @@ function GameRunner:checkExplanationAcknowledged()
     return not stillHasAknowledged
 end
 
+function linesAreEqual(current, expected)
+    -- Quick length check
+    if #current ~= #expected then
+        return false
+    end
+
+    -- Compare all lines at once
+    return table.concat(current, "\n") == table.concat(expected, "\n")
+end
+
 function GameRunner:checkEndGameMenuSelection()
     log.info("GameRunner:checkForNext")
     local lines = self.window.buffer:getGameLines()
+    local expectedLines = self:renderEndGame()
+
+    if linesAreEqual(lines, expectedLines) then
+        return
+    end
 
     local foundStates = {}
     for line in ipairs(lines) do
@@ -225,7 +240,7 @@ function GameRunner:checkEndGameMenuSelection()
         self.onFinished(self, lastMissingKey)
     else
         log.info("GameRunner:checkForNext Some line was changed that is insignificant, rerendering")
-        self.window.buffer:render(self:renderEndGame())
+        self.window.buffer:render(expectedLines)
     end
 end
 
