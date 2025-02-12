@@ -178,6 +178,16 @@ function GameRunner:renderExplanation()
     return lines
 end
 
+function linesAreEqual(current, expected)
+    -- Quick length check
+    if #current ~= #expected then
+        return false
+    end
+
+    -- Compare all lines at once
+    return table.concat(current, "\n") == table.concat(expected, "\n")
+end
+
 ---@return boolean
 function GameRunner:checkExplanationAcknowledged()
     local lines = self.window.buffer:getGameLines()
@@ -195,16 +205,6 @@ function GameRunner:checkExplanationAcknowledged()
     end
 
     return not stillHasAknowledged
-end
-
-function linesAreEqual(current, expected)
-    -- Quick length check
-    if #current ~= #expected then
-        return false
-    end
-
-    -- Compare all lines at once
-    return table.concat(current, "\n") == table.concat(expected, "\n")
 end
 
 function GameRunner:checkEndGameMenuSelection()
