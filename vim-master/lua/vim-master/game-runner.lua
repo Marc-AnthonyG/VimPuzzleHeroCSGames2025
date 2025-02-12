@@ -20,6 +20,8 @@ local games = {
     end,
 }
 
+local gameInstructionAknowledged = "Delete this line to start the game"
+
 
 ---@class GameResult
 ---@field timings number[]
@@ -77,14 +79,6 @@ function GameRunner:new(selectedGames, window, onFinished)
     local gameRunner = setmetatable(gameRunnerBase, self)
 
     local function onChange()
-        -- Close game if user exit plugin
-        if hasEverythingEnded then
-            if not self.ended then
-                self:close()
-            end
-            return
-        end
-
         if gameRunner.state == states.explanation then
             if gameRunner:checkExplanationAcknowledged() then
                 gameRunner.state = states.playing
@@ -175,7 +169,7 @@ function GameRunner:renderExplanation()
     table.insert(lines, "")
     table.insert(lines, string.rep("-", 60))
     table.insert(lines, "")
-    table.insert(lines, "Delete this line to start the game")
+    table.insert(lines, gameInstructionAknowledged)
 
     return lines
 end
@@ -183,20 +177,21 @@ end
 ---@return boolean
 function GameRunner:checkExplanationAcknowledged()
     local lines = self.window.buffer:getGameLines()
-    local expectedLines = self:renderExplanation()
+    local stillHasAknowledged = false
 
-    for i, line in ipairs(lines) do
-        if line ~= expectedLines[i] then
-            if expectedLines[i] == "Delete this line to start the game" then
-                return true
-            else
-                self.window.buffer:render(expectedLines)
-            end
+    for _, line in ipairs(lines) do
+        log.info("Checking line", line)
+        if line == gameInstructionAknowledged then
+            stillHasAknowledged = true
             break
         end
     end
 
-    return false
+    if stillHasAknowledged then
+        self.window.buffer:render(self:renderExplanation())
+    end
+
+    return not stillHasAknowledged
 end
 
 function GameRunner:checkForNext()
