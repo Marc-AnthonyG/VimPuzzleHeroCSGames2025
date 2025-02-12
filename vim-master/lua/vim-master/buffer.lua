@@ -63,11 +63,7 @@ function Buffer:_scheduledOnLine()
         if not ok then
             log.info("Buffer:_scheduledOnLine: is not ok", errMessage)
             ok, errMessage = pcall(function()
-                if endItAll then
-                    endItAll()
-                else
-                    self:close()
-                end
+                self:close()
             end)
 
             if not ok then

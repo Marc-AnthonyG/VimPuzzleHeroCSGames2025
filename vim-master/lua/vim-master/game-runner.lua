@@ -43,6 +43,7 @@ local runningId = 0
 ---@field ended boolean
 ---@field hasLost boolean
 ---@field onChange function
+---@field listenerId string
 local GameRunner = {}
 
 local function getGame(game, window)
@@ -312,7 +313,7 @@ function GameRunner:renderEndGame()
 end
 
 function GameRunner:endGame()
-    vim.keymap.del('n', '<any>', { buffer = self.window.buffer.bufh })
+    vim.on_key(nil, self.listenerId)
     local lines = self:renderEndGame()
     self.state = states.gameEnd
     self.window.buffer:setInstructions({})
@@ -383,17 +384,19 @@ function GameRunner:setupKeyRestrictions()
         return
     end
 
-    vim.keymap.set('n', '<any>', function()
-        local char = vim.fn.getcharstr()
-        log.info("Key pressed", char)
-        -- if not self.round.keyset[char] then
-        --     self.hasLost = true
-        --     self.round.lostReason = "Used forbidden key: " .. char
-        --     self:endGame()
-        --     return true
-        -- end
-        return false
-    end, { buffer = self.window.buffer.bufh, nowait = true })
+    local currentRound = self.round
+    local gameRunner = self
+
+    self.listenerId = vim.on_key(function(key)
+        log.info("GameRunner:setupKeyRestrictions", key)
+        if not currentRound.keyset[key] then
+            gameRunner.hasLost = true
+            gameRunner:endGame()
+            gameRunner.round.lostReason = string.format("You pressed forbiden key: %s", key)
+        end
+    end)
+
+    log.info("GameRunner:setupKeyRestrictions", self.listenerId)
 end
 
 return GameRunner
