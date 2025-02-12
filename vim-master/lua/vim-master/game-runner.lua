@@ -190,7 +190,13 @@ end
 
 ---@return boolean
 function GameRunner:checkExplanationAcknowledged()
+    log.info("GameRunner:checkExplanationAcknowledged")
     local lines = self.window.buffer:getGameLines()
+    local expectedLines = self:renderExplanation()
+    if linesAreEqual(lines, expectedLines) then
+        return false
+    end
+
     local stillHasAknowledged = false
 
     for _, line in ipairs(lines) do
@@ -201,7 +207,7 @@ function GameRunner:checkExplanationAcknowledged()
     end
 
     if stillHasAknowledged then
-        self.window.buffer:render(self:renderExplanation())
+        self.window.buffer:render(expectedLines)
     end
 
     return not stillHasAknowledged
