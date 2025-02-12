@@ -2,8 +2,7 @@
 - Run docker compose up
 - Go to localhost:5001 and enjoy!
 
-# Know bug
-- Repair selection of ready for game
+# TODO feature
 - spy on input to fail game
 - display timer
 
