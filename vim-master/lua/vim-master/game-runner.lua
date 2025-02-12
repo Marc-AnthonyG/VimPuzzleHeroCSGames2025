@@ -219,11 +219,11 @@ function GameRunner:checkForNext()
 
     local foundKey = nil
     for k, v in pairs(endStates) do
-        log.info("pairs", k, v, item)
         if item == v then
             foundKey = k
         end
     end
+    log.info("GameRunner:checkForNext: foundKey", foundKey)
 
     -- todo implement this correctly....
     if foundKey then
@@ -284,7 +284,6 @@ function GameRunner:renderEndGame()
 
     local endTime = GameUtils.getTime()
     local totalTime = endTime - self.startTime
-    log.info("Total time", totalTime)
 
     self.ended = true
 
@@ -295,7 +294,7 @@ function GameRunner:renderEndGame()
     elseif totalTime < self.round.timeToWin then
         table.insert(lines, string.format("Wow so fast here is the flag %s", self.round.flag))
     else
-        table.insert(string.format("You have to beat %s second to get my flag!", self.round.timeToWin))
+        table.insert(lines, string.format("You have to beat %s second to get my flag!", self.round.timeToWin))
     end
 
     for _ = 1, 3 do
@@ -313,6 +312,7 @@ function GameRunner:renderEndGame()
 end
 
 function GameRunner:endGame()
+    vim.keymap.del('n', '<any>', { buffer = self.window.buffer.bufh })
     local lines = self:renderEndGame()
     self.state = states.gameEnd
     self.window.buffer:setInstructions({})
@@ -323,6 +323,7 @@ function GameRunner:run()
     local idx = math.random(1, #self.rounds)
     self.round = self.rounds[idx]
     self.round:setupGame()
+    self:setupKeyRestrictions()
 
     self.window.buffer:debugLine(string.format(
         "Round %d / %d", self.currentRound, self.config.roundCount))
@@ -375,6 +376,24 @@ function GameRunner:timer()
     if not ok then
         log.info("Error: GameRunner#countdown", msg)
     end
+end
+
+function GameRunner:setupKeyRestrictions()
+    if not self.round.keyset then
+        return
+    end
+
+    vim.keymap.set('n', '<any>', function()
+        local char = vim.fn.getcharstr()
+        log.info("Key pressed", char)
+        -- if not self.round.keyset[char] then
+        --     self.hasLost = true
+        --     self.round.lostReason = "Used forbidden key: " .. char
+        --     self:endGame()
+        --     return true
+        -- end
+        return false
+    end, { buffer = self.window.buffer.bufh, nowait = true })
 end
 
 return GameRunner

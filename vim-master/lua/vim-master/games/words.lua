@@ -122,4 +122,11 @@ function Words:getExplanation()
 	}
 end
 
+Words.keyset = {
+	h = true,
+	j = true,
+	k = true,
+	l = true
+}
+
 return Words

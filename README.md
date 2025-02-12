@@ -4,6 +4,7 @@
 
 # TODO feature
 - spy on input to fail game
+- repair end menu
 
 
 # How to make a difer function

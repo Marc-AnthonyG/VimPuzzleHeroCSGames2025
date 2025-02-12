@@ -9,6 +9,7 @@
 ---@field window Window
 ---@field timeToWin number
 ---@field lostReason string
+---@field keyset table<string, boolean>
 
 
 ---@class GameExplanation
