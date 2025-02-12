@@ -91,7 +91,7 @@ function GameRunner:new(selectedGames, window, onFinished)
         elseif gameRunner.state == states.playing then
             gameRunner:checkForWinOrLost()
         else
-            gameRunner:checkForNext()
+            gameRunner:checkEndGameMenuSelection()
         end
     end
 
@@ -197,41 +197,35 @@ function GameRunner:checkExplanationAcknowledged()
     return not stillHasAknowledged
 end
 
-function GameRunner:checkForNext()
+function GameRunner:checkEndGameMenuSelection()
     log.info("GameRunner:checkForNext")
-
     local lines = self.window.buffer:getGameLines()
-    local expectedLines = self:renderEndGame()
-    local idx = 0
-    local found = false
 
-    repeat
-        idx = idx + 1
-        found = lines[idx] ~= expectedLines[idx]
-    until idx == #lines or found
-
-    if found == false then
-        return
-    end
-
-    local item = expectedLines[idx]
-
-    log.info("GameRunner:checkForNext: compared", vim.inspect(lines), vim.inspect(expectedLines))
-
-    local foundKey = nil
-    for k, v in pairs(endStates) do
-        if item == v then
-            foundKey = k
+    local foundStates = {}
+    for line in ipairs(lines) do
+        for stateKey, stateValue in pairs(endStates) do
+            if line == stateValue then
+                foundStates[stateKey] = true
+            end
         end
     end
-    log.info("GameRunner:checkForNext: foundKey", foundKey)
 
-    -- todo implement this correctly....
-    if foundKey then
-        self.onFinished(self, foundKey)
+    local missingCount = 0
+    local lastMissingKey = nil
+
+    for stateKey, _ in pairs(endStates) do
+        if not foundStates[stateKey] then
+            missingCount = missingCount + 1
+            lastMissingKey = stateKey
+        end
+    end
+
+    if missingCount == 1 then
+        log.info("GameRunner:checkForNext: foundKey", lastMissingKey)
+        self.onFinished(self, lastMissingKey)
     else
         log.info("GameRunner:checkForNext Some line was changed that is insignificant, rerendering")
-        self.window.buffer:render(expectedLines)
+        self.window.buffer:render(self:renderEndGame())
     end
 end
 
@@ -305,9 +299,9 @@ function GameRunner:renderEndGame()
     table.insert(lines, "Where do you want to go next? (Delete Line)")
     local optionLine = #lines + 1
 
-    table.insert(lines, "Menu")
-    table.insert(lines, "Replay")
-    table.insert(lines, "Quit")
+    table.insert(lines, endStates.menu)
+    table.insert(lines, endStates.replay)
+    table.insert(lines, endStates.quit)
 
     return lines, optionLine
 end
@@ -368,8 +362,11 @@ function GameRunner:timer()
             self.window.buffer:setInstructions(lines)
             self.window.buffer:renderInstructions()
 
+            local gameRunner = self
             vim.defer_fn(function()
-                self:timer()
+                if not gameRunner.ended then
+                    self:timer()
+                end
             end, 1000)
         end
     end)
