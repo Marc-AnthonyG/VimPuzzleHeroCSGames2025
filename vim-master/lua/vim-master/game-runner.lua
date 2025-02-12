@@ -223,13 +223,19 @@ function GameRunner:checkEndGameMenuSelection()
     end
 
     local foundStates = {}
-    for line in ipairs(lines) do
+    for _, line in ipairs(lines) do
         for stateKey, stateValue in pairs(endStates) do
+            if line == "Menu" then
+                log.info("GameRunner:checkForNext: should found key")
+            end
+
             if line == stateValue then
+                log.info("GameRunner:checkForNext: should found key")
                 foundStates[stateKey] = true
             end
         end
     end
+    log.info(vim.inspect(foundStates))
 
     local missingCount = 0
     local lastMissingKey = nil
@@ -273,7 +279,7 @@ function GameRunner:endRound()
     self.running = false
 
     log.info("endRound", self.currentRound, self.config.roundCount)
-    if self.currentRound >= self.config.roundCount then -- TODO: self.config.roundCount then
+    if self.currentRound >= self.config.roundCount then
         self:endGame()
         return
     end
