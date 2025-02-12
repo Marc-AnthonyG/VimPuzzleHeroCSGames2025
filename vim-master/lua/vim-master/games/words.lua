@@ -122,4 +122,34 @@ function Words:getExplanation()
 	}
 end
 
+Words.keyset = {
+	-- Basic movement
+	h = true,
+	j = true,
+	k = true,
+	l = true,
+	-- Word movement
+	w = true,
+	b = true,
+	-- Shifted word movement
+	W = true, -- Move forward by WORD
+	B = true, -- Move backward by WORD
+	-- Line movement
+	['0'] = true,
+	['$'] = true,
+	-- Deletion
+	d = true,
+	D = true, -- Delete to end of line
+	-- Numbers for repeat operations
+	['1'] = true,
+	['2'] = true,
+	['3'] = true,
+	['4'] = true,
+	['5'] = true,
+	['6'] = true,
+	['7'] = true,
+	['8'] = true,
+	['9'] = true,
+}
+
 return Words
