@@ -23,8 +23,6 @@ local credits = {
     "",
     "This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen",
     "https://github.com/ThePrimeagen/vim-master",
-    "",
-    ""
 }
 
 function Menu:new(window, onResults)
