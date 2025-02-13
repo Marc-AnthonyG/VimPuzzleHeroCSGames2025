@@ -1,5 +1,6 @@
 local GameUtils = require("vim-master.game-utils");
 local WordRound = require("vim-master.games.words");
+local Hjkl = require("vim-master.games.hjkl");
 local log = require("vim-master.log");
 
 local endStates = {
@@ -16,6 +17,9 @@ local states = {
 local games = {
     words = function(window)
         return WordRound:new(window)
+    end,
+    hjkl = function(window)
+        return Hjkl:new(window)
     end,
 }
 
