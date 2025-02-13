@@ -103,7 +103,6 @@ function Buffer:render(lines)
         currentLine = currentLine + #self.instructions
     end
 
-    log.debug("Buffer:Rendering", vim.inspect(lines))
     vim.api.nvim_buf_set_lines(self.bufh, currentLine, -1, false, lines)
 end
 

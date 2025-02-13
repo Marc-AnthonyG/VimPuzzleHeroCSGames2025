@@ -69,7 +69,6 @@ function Hjkl:setupGame()
 	}
 end
 
--- Helper function to compare two sets of lines
 local function areLinesSame(lines1, lines2)
 	if #lines1 ~= #lines2 then
 		return false
@@ -86,7 +85,6 @@ end
 
 function Hjkl:checkForWin()
 	local currentLines = self.window.buffer:getGameLines()
-	-- Win condition: current lines match the board without X
 	return areLinesSame(currentLines, self.config.boardWithoutX)
 end
 
