@@ -348,7 +348,9 @@ function GameRunner:run()
 
 	self.window.buffer:setInstructions(self.round.getInstructionsSummary())
 	local lines, cursorLine, cursorCol = self.round:render()
+	log.debug("GameRunner:run", vim.inspect(lines))
 	self.window.buffer:render(lines)
+	log.debug("GameRunner:run after change", vim.inspect(self.window.buffer:getGameLines()))
 
 	cursorLine = cursorLine or 0
 	cursorCol = cursorCol or 0

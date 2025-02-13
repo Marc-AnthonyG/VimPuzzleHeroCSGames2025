@@ -27,7 +27,7 @@ function Hjkl:getInstructionsSummary()
 end
 
 function Hjkl:setupGame()
-	local boardSize = 8
+	local boardSize = 15
 	local lines = GameUtils.createEmpty(boardSize)
 	local linesWithoutX = GameUtils.createEmpty(boardSize)
 
@@ -51,8 +51,8 @@ function Hjkl:setupGame()
 			if xLine == idx and xCol == i then
 				line = line .. "x"
 			else
-				line = line .. " "
-				lineWithoutX = lineWithoutX .. " "
+				line = line .. "-"
+				lineWithoutX = lineWithoutX .. "-"
 			end
 		end
 
@@ -69,33 +69,45 @@ function Hjkl:setupGame()
 	}
 end
 
-function Hjkl:checkForWin()
-	local lines = self.window.buffer:getGameLines()
-	log.info("HjklRound:checkForLose: ", #lines, #self.config.board)
-	local found = false
-	local idx = 1
-
-	while idx <= #lines and not found do
-		local line = lines[idx]
-		found = string.match(line, "x")
-
-		idx = idx + 1
+-- Helper function to compare two sets of lines
+local function areLinesSame(lines1, lines2)
+	if #lines1 ~= #lines2 then
+		return false
 	end
 
-	return not found
+	for i = 1, #lines1 do
+		if lines1[i] ~= lines2[i] then
+			return false
+		end
+	end
+
+	return true
+end
+
+function Hjkl:checkForWin()
+	local currentLines = self.window.buffer:getGameLines()
+	-- Win condition: current lines match the board without X
+	return areLinesSame(currentLines, self.config.boardWithoutX)
 end
 
 function Hjkl:checkForLose()
-	return false
+	local currentLines = self.window.buffer:getGameLines()
+	log.debug("hjkl currentLines when check for lost", vim.inspect(currentLines))
+
+	local matchesOriginal = areLinesSame(currentLines, self.config.board)
+	local matchesWithoutX = areLinesSame(currentLines, self.config.boardWithoutX)
+
+	return not matchesOriginal and not matchesWithoutX
 end
 
 function Hjkl:render()
+	log.debug("hjkl render", vim.inspect(self.config.board))
 	return self.config.board, self.config.cursorLine, self.config.cursorCol
 end
 
 Hjkl.flag = "CSGAMES-YAY-YOU-KNOW-HOW-TO-NOT-USE-ARROW"
 
-Hjkl.lostReason = "You deleted too much!"
+Hjkl.lostReason = "You modified the board incorrectly! You should only delete the X."
 
 Hjkl.timeToWin = 20
 
