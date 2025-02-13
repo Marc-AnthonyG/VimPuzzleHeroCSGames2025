@@ -91,28 +91,27 @@ function Buffer:render(lines)
     -- Clear buffer content
     vim.api.nvim_buf_set_lines(self.bufh, 0, -1, false, {})
 
-    local currentLine = 1
-
     if self.debugLineStr then
         vim.api.nvim_buf_set_lines(self.bufh, 0, 1, false, { self.debugLineStr })
     end
 
+    local currentLine = 1
     if #self.instructions > 0 then
+        self.lastRenderedInstruction = self.instructions
         vim.api.nvim_buf_set_lines(self.bufh, currentLine, currentLine + #self.instructions,
             false, self.instructions)
         currentLine = currentLine + #self.instructions
     end
 
-    log.trace("Buffer:Rendering")
-    vim.api.nvim_buf_set_lines(self.bufh, currentLine, currentLine + #lines, false, lines)
+    vim.api.nvim_buf_set_lines(self.bufh, currentLine, -1, false, lines)
 end
 
 function Buffer:renderInstructions()
-    local instructionLen = #self.instructions
-    if instructionLen > 0 then
-        vim.api.nvim_buf_set_lines(
-            self.bufh, 1, 1 + instructionLen, false, self.instructions)
-    end
+    local oldLen = self.lastRenderedInstruction and #self.lastRenderedInstruction or 0
+
+    vim.api.nvim_buf_set_lines(self.bufh, 1, 1 + oldLen, false, self.instructions)
+
+    self.lastRenderedInstruction = self.instructions
 end
 
 function Buffer:debugLine(line)
@@ -124,7 +123,6 @@ end
 ---Sets the new lines you want to display in the buffer
 ---@param lines string[]
 function Buffer:setInstructions(lines)
-    self.lastRenderedInstruction = self.instructions
     self.instructions = lines
 end
 

@@ -14,10 +14,10 @@ local default_config = {
     plugin = 'VimMasterChallenge',
 
     -- Should print the output to neovim while running
-    use_console = true,
+    use_console = false,
 
     -- Should highlighting be used in console (using echohl)
-    highlights = true,
+    highlights = false,
 
     -- Should write to a file
     use_file = true,
