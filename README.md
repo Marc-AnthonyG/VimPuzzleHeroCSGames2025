@@ -4,3 +4,4 @@
 
 # TODO feature/bug
 - repair menu after end game
+- repair lost of hjkl game
