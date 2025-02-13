@@ -1,7 +1,8 @@
 local games = {
-    "words",
+	"words",
+	"kobe",
 }
 
 return {
-    games = games
+	games = games,
 }
