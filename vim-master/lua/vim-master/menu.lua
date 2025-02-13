@@ -84,13 +84,11 @@ function Menu:onChange()
     local currentLines = self.window.buffer:getGameLines()
     local expectedLines = getExpectedLines()
 
-    -- If the current state matches the expected state, do nothing
     if areTablesEqual(currentLines, expectedLines) then
         log.trace("Menu:onChange - no changes needed")
         return
     end
 
-    -- Check if a game was deleted
     local missingGameIndex = nil
     local currentGameLines = {}
 
@@ -101,7 +99,6 @@ function Menu:onChange()
         end
     end
 
-    -- Find which game is missing
     for i = 1, #types.games do
         local found = false
         for _, index in ipairs(currentGameLines) do
@@ -116,7 +113,6 @@ function Menu:onChange()
         end
     end
 
-    -- If we found a missing game, start it
     if missingGameIndex then
         self.game = types.games[missingGameIndex]
         log.info("Starting Game", self.game)
@@ -127,8 +123,6 @@ function Menu:onChange()
         return
     end
 
-    -- If we get here, something changed but it wasn't a game deletion
-    -- We need to rerender to restore the correct state
     self:render()
 end
 
