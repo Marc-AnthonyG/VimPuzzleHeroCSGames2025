@@ -3,5 +3,3 @@
 - Go to localhost:5001 and enjoy!
 
 # TODO feature/bug
-- repair lost of hjkl game
-- fix line accumulation in buffer
