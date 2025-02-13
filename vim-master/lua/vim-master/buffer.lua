@@ -1,15 +1,6 @@
 local bind = require("vim-master.bind")
 local log = require("vim-master.log")
 
-local function createEmpty(count)
-    local lines = {}
-    for idx = 1, count, 1 do
-        lines[idx] = ""
-    end
-
-    return lines
-end
-
 ---@class Buffer
 ---@field bufh number Buffer handle
 ---@field onChange function|nil Callback for buffer changes
@@ -21,7 +12,7 @@ end
 ---@field instructions string[] Instructions to display
 local Buffer = {}
 
----Creates a new Words game instance
+---Creates a new Buffer instance
 ---@param bufh number
 ---@return Buffer
 function Buffer:new(bufh)
@@ -43,8 +34,6 @@ end
 
 function Buffer:close()
     self.onChangeList = {}
-    -- TODO: Teejaay fix this
-
     if vim.api.nvim_buf_detach then
         vim.api.nvim_buf_detach(self.bufh)
     end
@@ -52,7 +41,6 @@ end
 
 function Buffer:_scheduledOnLine()
     if self == nil or self.onChangeList == nil then
-        ---@diagnostic disable-next-line: need-check-nil
         return
     end
 
@@ -86,32 +74,40 @@ function Buffer:attach()
 end
 
 function Buffer:render(lines)
-    local idx = 1
     local instructionLen = #self.instructions
+    local currentLen = #self.lastRenderedInstruction + 1 + (#self.lastRendered or 0)
 
-    self:clear()
+    -- Clear entire buffer first
+    vim.api.nvim_buf_set_lines(self.bufh, 0, currentLen, false, {})
+
     self.lastRendered = lines
+    local idx = 0
 
+    -- Add debug line if it exists
     if self.debugLineStr ~= nil then
-        vim.api.nvim_buf_set_lines(
-            self.bufh, 0, 1, false, { self.debugLineStr })
+        vim.api.nvim_buf_set_lines(self.bufh, idx, idx + 1, false, { self.debugLineStr })
+        idx = idx + 1
     end
 
+    -- Add instructions if they exist
     if instructionLen > 0 then
-        vim.api.nvim_buf_set_lines(
-            self.bufh, idx, idx + instructionLen, false, self.instructions)
+        vim.api.nvim_buf_set_lines(self.bufh, idx, idx + instructionLen, false, self.instructions)
         idx = idx + instructionLen
     end
 
-    log.trace("Buffer:Rendering")
-    vim.api.nvim_buf_set_lines(self.bufh, idx, idx + #lines, false, lines)
+    -- Add the new lines
+    if #lines > 0 then
+        vim.api.nvim_buf_set_lines(self.bufh, idx, idx + #lines, false, lines)
+    end
 end
 
 function Buffer:renderInstructions()
     local instructionLen = #self.instructions
     if instructionLen > 0 then
-        vim.api.nvim_buf_set_lines(
-            self.bufh, 1, 1 + instructionLen, false, self.instructions)
+        -- Clear existing instructions first
+        vim.api.nvim_buf_set_lines(self.bufh, 1, 1 + #self.lastRenderedInstruction, false, {})
+        -- Add new instructions
+        vim.api.nvim_buf_set_lines(self.bufh, 1, 1 + instructionLen, false, self.instructions)
     end
 end
 
@@ -132,27 +128,27 @@ function Buffer:clearGameLines()
     local startOffset = #self.instructions + 1
     local len = #self.lastRendered
 
-    vim.api.nvim_buf_set_lines(
-        self.bufh, startOffset, startOffset + len, false, createEmpty(len))
+    -- Delete game lines instead of replacing with empty strings
+    vim.api.nvim_buf_set_lines(self.bufh, startOffset, startOffset + len, false, {})
 end
 
 function Buffer:getGameLines()
     local startOffset = #self.instructions + 1
     local len = #self.lastRendered
 
-    local lines = vim.api.nvim_buf_get_lines(
-        self.bufh, startOffset, startOffset + len, false)
-
-    log.trace("Buffer:getGameLines", startOffset, len, vim.inspect(lines))
-
-    return lines
+    return vim.api.nvim_buf_get_lines(self.bufh, startOffset, startOffset + len, false)
 end
 
 function Buffer:clear()
-    local len = #self.lastRenderedInstruction + 1 + (#self.lastRendered or 0)
+    local currentLen = #self.lastRenderedInstruction + 1 + (#self.lastRendered or 0)
 
-    vim.api.nvim_buf_set_lines(
-        self.bufh, 0, len, false, createEmpty(len))
+    self.instructions = {}
+    self.debugLineStr = nil
+    self.lastRendered = {}
+    self.lastRenderedInstruction = {}
+
+    -- Delete all lines instead of replacing with empty strings
+    vim.api.nvim_buf_set_lines(self.bufh, 0, currentLen, false, {})
 end
 
 function Buffer:onChange(cb)
