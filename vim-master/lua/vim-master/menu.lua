@@ -28,6 +28,7 @@ local credits = {
 }
 
 function Menu:new(window, onResults)
+    log.trace("Menu:new")
     local menuObj = {
         window = window,
         buffer = window.buffer,
@@ -52,6 +53,7 @@ local function getMenuLength()
 end
 
 local function getTableChanges(lines, compareSet, startIdx)
+    log.trace("Menu:getTableChanges")
     local maxCount = #lines
     local idx = startIdx
     local i = 1
@@ -70,6 +72,7 @@ local function getTableChanges(lines, compareSet, startIdx)
 end
 
 function Menu:onChange()
+    log.trace("Menu:onChange")
     local lines = self.window.buffer:getGameLines()
     local maxCount = getMenuLength()
 
@@ -100,14 +103,8 @@ function Menu:onChange()
     end
 end
 
-local function createMenuItem(str, currentValue)
-    if currentValue == str then
-        return "[x] " .. str
-    end
-    return "[ ] " .. str
-end
-
 function Menu:render()
+    log.trace("Menu:render")
     self.window.buffer:clearGameLines()
 
     local lines = {}
@@ -116,7 +113,7 @@ function Menu:render()
     end
 
     for idx = 1, #types.games do
-        table.insert(lines, createMenuItem(types.games[idx], self.game))
+        table.insert(lines, "- " .. types.games[idx])
     end
 
     for idx = 1, #credits do
@@ -127,6 +124,7 @@ function Menu:render()
 end
 
 function Menu:close()
+    log.trace("Menu:close")
     self.buffer:removeListener(self._onChange)
 end
 
