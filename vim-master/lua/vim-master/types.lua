@@ -1,5 +1,6 @@
 local games = {
     "words",
+    "hjkl",
 }
 
 return {
