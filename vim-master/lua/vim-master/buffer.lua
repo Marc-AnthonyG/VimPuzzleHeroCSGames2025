@@ -134,10 +134,9 @@ end
 
 function Buffer:clearGameLines()
     local startOffset = #self.instructions + 1
-    local len = #self.lastRendered
+    local endOffset = #self.lastRendered + startOffset
 
-    vim.api.nvim_buf_set_lines(
-        self.bufh, startOffset, startOffset + len, false, createEmpty(len))
+    vim.api.nvim_buf_set_lines(self.bufh, startOffset, endOffset, false, {})
 end
 
 function Buffer:getGameLines()
@@ -151,13 +150,14 @@ function Buffer:getGameLines()
 end
 
 function Buffer:clear()
-    local len = #self.lastRenderedInstruction + 1 + (#self.lastRendered or 0)
+    local currentLen = #self.lastRenderedInstruction + 1 + (#self.lastRendered or 0)
 
     self.instructions = {}
     self.debugLineStr = nil
+    self.lastRendered = {}
+    self.lastRenderedInstruction = {}
 
-    vim.api.nvim_buf_set_lines(
-        self.bufh, 0, len, false, createEmpty(len))
+    vim.api.nvim_buf_set_lines(self.bufh, 0, currentLen, false, {})
 end
 
 function Buffer:onChange(cb)
