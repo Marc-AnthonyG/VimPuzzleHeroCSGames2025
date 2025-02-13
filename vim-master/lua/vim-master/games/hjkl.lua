@@ -90,7 +90,6 @@ end
 
 function Hjkl:checkForLose()
 	local currentLines = self.window.buffer:getGameLines()
-	log.debug("hjkl currentLines when check for lost", vim.inspect(currentLines))
 
 	local matchesOriginal = areLinesSame(currentLines, self.config.board)
 	local matchesWithoutX = areLinesSame(currentLines, self.config.boardWithoutX)

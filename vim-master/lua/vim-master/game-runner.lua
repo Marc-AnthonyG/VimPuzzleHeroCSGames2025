@@ -411,8 +411,8 @@ function GameRunner:setupKeyRestrictions()
 		log.info("GameRunner:setupKeyRestrictions", key)
 		if not currentRound.keyset[key] then
 			gameRunner.hasLost = true
-			gameRunner:endGame()
 			gameRunner.round.lostReason = string.format("You pressed forbidden key: %s", key)
+			gameRunner:endGame()
 		end
 	end)
 
