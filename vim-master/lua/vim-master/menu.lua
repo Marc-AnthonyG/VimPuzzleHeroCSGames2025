@@ -48,78 +48,94 @@ function Menu:new(window, onResults)
     return createdMenu
 end
 
-local function getMenuLength()
-    return #types.games + #gameHeader + #credits
+local function areTablesEqual(t1, t2)
+    if #t1 ~= #t2 then return false end
+    for i = 1, #t1 do
+        if t1[i] ~= t2[i] then return false end
+    end
+    return true
 end
 
-local function getTableChanges(lines, compareSet, startIdx)
-    log.trace("Menu:getTableChanges")
-    local maxCount = #lines
-    local idx = startIdx
-    local i = 1
-    local found = false
-
-    while found == false and idx <= maxCount and i <= #compareSet do
-        if lines[idx] == nil or lines[idx]:find(compareSet[i], 1, true) == nil then
-            found = true
-        else
-            i = i + 1
-            idx = idx + 1
+local function findGameInLine(line)
+    for i, game in ipairs(types.games) do
+        if line and line:find("- " .. game, 1, true) then
+            return i, game
         end
     end
+    return nil
+end
 
-    return found, i, idx
+local function getExpectedLines()
+    local lines = {}
+    for _, line in ipairs(gameHeader) do
+        table.insert(lines, line)
+    end
+    for _, game in ipairs(types.games) do
+        table.insert(lines, "- " .. game)
+    end
+    for _, line in ipairs(credits) do
+        table.insert(lines, line)
+    end
+    return lines
 end
 
 function Menu:onChange()
     log.trace("Menu:onChange")
-    local lines = self.window.buffer:getGameLines()
-    local maxCount = getMenuLength()
+    local currentLines = self.window.buffer:getGameLines()
+    local expectedLines = getExpectedLines()
 
-    if #lines == maxCount then
+    -- If the current state matches the expected state, do nothing
+    if areTablesEqual(currentLines, expectedLines) then
+        log.trace("Menu:onChange - no changes needed")
         return
     end
 
-    local found, i, idx = getTableChanges(lines, gameHeader, 1)
-    log.info("Menu:onChange initial instructions", found, i, idx)
-    --- If menu change rerender
-    if found then
-        self:render()
-        return
+    -- Check if a game was deleted
+    local missingGameIndex = nil
+    local currentGameLines = {}
+
+    for _, line in ipairs(currentLines) do
+        local gameIndex = findGameInLine(line)
+        if gameIndex then
+            table.insert(currentGameLines, gameIndex)
+        end
     end
 
-    found, i, idx = getTableChanges(lines, types.games, idx)
-    log.info("Menu:onChange game changes", found, i, idx)
-    if found then
-        self.game = types.games[i]
+    -- Find which game is missing
+    for i = 1, #types.games do
+        local found = false
+        for _, index in ipairs(currentGameLines) do
+            if index == i then
+                found = true
+                break
+            end
+        end
+        if not found then
+            missingGameIndex = i
+            break
+        end
+    end
 
+    -- If we found a missing game, start it
+    if missingGameIndex then
+        self.game = types.games[missingGameIndex]
         log.info("Starting Game", self.game)
         local ok, msg = pcall(self.onResults, self.game)
-
         if not ok then
             log.info("Menu:onChange error", msg)
         end
         return
     end
+
+    -- If we get here, something changed but it wasn't a game deletion
+    -- We need to rerender to restore the correct state
+    self:render()
 end
 
 function Menu:render()
     log.trace("Menu:render")
     self.window.buffer:clearGameLines()
-
-    local lines = {}
-    for idx = 1, #gameHeader do
-        table.insert(lines, gameHeader[idx])
-    end
-
-    for idx = 1, #types.games do
-        table.insert(lines, "- " .. types.games[idx])
-    end
-
-    for idx = 1, #credits do
-        table.insert(lines, credits[idx])
-    end
-
+    local lines = getExpectedLines()
     self.window.buffer:render(lines)
 end
 
