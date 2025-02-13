@@ -5,7 +5,6 @@ local log = require("vim-master.log");
 local endStates = {
     menu = "Menu",
     replay = "Replay",
-    quit = "Quit",
 }
 
 local states = {
@@ -225,17 +224,11 @@ function GameRunner:checkEndGameMenuSelection()
     local foundStates = {}
     for _, line in ipairs(lines) do
         for stateKey, stateValue in pairs(endStates) do
-            if line == "Menu" then
-                log.info("GameRunner:checkForNext: should found key")
-            end
-
             if line == stateValue then
-                log.info("GameRunner:checkForNext: should found key")
                 foundStates[stateKey] = true
             end
         end
     end
-    log.info(vim.inspect(foundStates))
 
     local missingCount = 0
     local lastMissingKey = nil
