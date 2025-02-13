@@ -35,8 +35,8 @@ function Words:setupGame()
 	end
 	local round = {}
 	local expected = {}
-	local idx = math.ceil(math.random() * 6);
-	for i = 1, 6 do
+	local idx = math.ceil(math.random() * 20);
+	for i = 1, 20 do
 		if i == idx then
 			table.insert(round, two);
 		else
@@ -137,6 +137,8 @@ Words.keyset = {
 	-- Line movement
 	['0'] = true,
 	['$'] = true,
+	I = true,
+	A = true,
 	-- Deletion
 	d = true,
 	D = true, -- Delete to end of line
