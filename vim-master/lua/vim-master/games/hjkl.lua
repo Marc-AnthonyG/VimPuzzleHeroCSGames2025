@@ -2,9 +2,9 @@ local GameUtils = require("vim-master.game-utils")
 local log = require("vim-master.log")
 
 ---@class HjklConfig
----@field roundTime number
----@field words string[]
----@field expected string
+---@field lines string[]
+---@field cursorCol number
+---@field cursorLine number
 
 ---@class Hjkl: Game
 local Hjkl = {}
@@ -27,10 +27,51 @@ function Hjkl:getInstructionsSummary()
 end
 
 function Hjkl:setupGame()
+	local boardSize = 8
+	local lines = GameUtils.createEmpty(boardSize)
+	local linesWithoutX = GameUtils.createEmpty(boardSize)
+
+	local xCol = 1
+	local xLine = 1
+	local cursorCol = 1
+	local cursorLine = 1
+	while (xLine == cursorLine or xCol == cursorCol) do
+		xCol = math.random(1, boardSize)
+		xLine = math.random(1, boardSize)
+		cursorCol = math.random(1, boardSize)
+		cursorLine = math.random(1, boardSize)
+	end
+
+	local idx = 1
+	while idx <= #lines do
+		local line = ""
+		local lineWithoutX = ""
+
+		for i = 1, boardSize, 1 do
+			if xLine == idx and xCol == i then
+				line = line .. "x"
+			else
+				line = line .. " "
+				lineWithoutX = lineWithoutX .. " "
+			end
+		end
+
+		lines[idx] = line
+		linesWithoutX[idx] = lineWithoutX
+		idx = idx + 1
+	end
+
+	self.config = {
+		board = lines,
+		boardWithoutX = linesWithoutX,
+		cursorCol = cursorCol,
+		cursorLine = cursorLine,
+	}
 end
 
 function Hjkl:checkForWin()
 	local lines = self.window.buffer:getGameLines()
+	log.info("HjklRound:checkForLose: ", #lines, #self.config.board)
 	local found = false
 	local idx = 1
 
@@ -40,7 +81,6 @@ function Hjkl:checkForWin()
 
 		idx = idx + 1
 	end
-	log.info("HjklRound:checkForWin(", idx, "): ", found)
 
 	return not found
 end
@@ -50,45 +90,12 @@ function Hjkl:checkForLose()
 end
 
 function Hjkl:render()
-	local boardSize = 8
-	local lines = GameUtils.createEmpty(boardSize)
-
-	local xCol = 1
-	local xLine = 1
-	local cursorCol = 1
-	local cursorLine = 1
-
-	while (xLine == cursorLine or xCol == cursorCol) do
-		xCol = math.random(1, boardSize)
-		xLine = math.random(1, boardSize)
-		cursorCol = math.random(1, boardSize)
-		cursorLine = math.random(1, boardSize)
-	end
-
-	log.info("HjklRound:render      xLine: ", xLine, "      xCol: ", xCol)
-	log.info("HjklRound:render cursorLine: ", cursorLine, " cursorCol: ", cursorCol)
-
-	local idx = 1
-	while idx <= #lines do
-		local line = lines[idx]
-		for i = 1, boardSize, 1
-		do
-			if xLine == idx and xCol == i then
-				line = line .. "x"
-			else
-				line = line .. " "
-			end
-		end
-		lines[idx] = line
-		idx = idx + 1
-	end
-
-	return lines, cursorLine, cursorCol
+	return self.config.board, self.config.cursorLine, self.config.cursorCol
 end
 
 Hjkl.flag = "CSGAMES-YAY-YOU-KNOW-HOW-TO-NOT-USE-ARROW"
 
-Hjkl.lostReason = ""
+Hjkl.lostReason = "You deleted too much!"
 
 Hjkl.timeToWin = 20
 
