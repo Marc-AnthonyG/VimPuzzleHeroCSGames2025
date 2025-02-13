@@ -63,9 +63,9 @@ local function menu()
             if nextState == "menu" then
                 game:close()
                 windowHandler.buffer:clear()
-                vim.defer_fn(function()
+                vim.schedule(function()
                     createMenu()
-                end, 0)
+                end)
             elseif nextState == "replay" then
                 game:close()
                 onMenuSelect(gameString)

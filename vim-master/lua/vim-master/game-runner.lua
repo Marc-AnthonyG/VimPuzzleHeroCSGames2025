@@ -179,13 +179,11 @@ function GameRunner:renderExplanation()
 	return lines
 end
 
-function linesAreEqual(current, expected)
-	-- Quick length check
+local function linesAreEqual(current, expected)
 	if #current ~= #expected then
 		return false
 	end
 
-	-- Compare all lines at once
 	return table.concat(current, "\n") == table.concat(expected, "\n")
 end
 
@@ -291,7 +289,10 @@ end
 
 function GameRunner:close()
 	log.info("GameRunner:close()", debug.traceback())
+	vim.on_key(nil, self.listenerId)
 	self.window.buffer:removeListener(self.onChange)
+	self.window.buffer:clearGameLines()
+	self.window.buffer:debugLine(nil)
 	self.ended = true
 end
 
