@@ -93,7 +93,7 @@ function Words:render()
 	return lines, cursorIdx
 end
 
-Words.flag = "CSGAMES-d542d95c58b0048295422b46cf0a4a93"
+Words.flag = "CSGAMES-WOW-YOU-ARE-SO-FAST"
 
 Words.lostReason = "You deleted the wrong word!"
 

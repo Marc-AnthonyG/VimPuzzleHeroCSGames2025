@@ -172,3 +172,4 @@ function Buffer:removeListener(cb)
 end
 
 return Buffer
+
