@@ -30,18 +30,11 @@ function Kobe:getInstructionsSummary()
 	}
 end
 
--- Example usage:
-local my_list = { 1, 2, 3, 4, 5 }
-
-for i, v in ipairs(my_list) do
-	print(v)
-end
-
 function Kobe:setupGame()
-	local bracketBasket = "[           ]"
-	local curlyBasket = "{         }"
-	local doubleQuoteBasket = '"               "'
-	local singleQuoteBasket = "'               '"
+	local bracketBasket = "[]"
+	local curlyBasket = "{}"
+	local doubleQuoteBasket = '""'
+	local singleQuoteBasket = "''"
 
 	--  idx 1 = south; 2 = east; 3 = center; 4 = southeast
 	local positions = { bracketBasket, curlyBasket, doubleQuoteBasket, singleQuoteBasket }
@@ -79,9 +72,24 @@ function Kobe:render()
 
 	lines[20] = string.rep(" ", 90) .. self.config.basketArrangement.center
 
-	lines[40] = self.config.basketArrangement.south .. string.rep(" ", 180) .. self.config.basketArrangement.southeast
+	lines[60] = self.config.basketArrangement.south .. string.rep(" ", 180) .. self.config.basketArrangement.southeast
 
 	return lines, cursorIdx
+end
+
+function Kobe:checkForWin()
+	local lines = self.window.buffer:getGameLines()
+	local trimmed = GameUtils.trimLines(lines)
+	local concatenated = table.concat(GameUtils.filterEmptyLines(trimmed), "")
+	local lowercased = concatenated:lower()
+
+	local winner = lowercased == self.config.expected
+
+	if winner then
+		vim.cmd("stopinsert")
+	end
+
+	return winner
 end
 
 function Kobe:checkForLose()
@@ -133,6 +141,10 @@ Kobe.keyset = {
 	-- Deletion
 	d = true,
 	D = true, -- Delete to end of line
+	-- Search
+	f = true,
+	-- Goto
+	g = true,
 	-- Numbers for repeat operations
 	["1"] = true,
 	["2"] = true,

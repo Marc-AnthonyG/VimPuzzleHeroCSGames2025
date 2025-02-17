@@ -1,6 +1,7 @@
 local GameUtils = require("vim-master.game-utils")
 local WordRound = require("vim-master.games.words")
 local KobeRound = require("vim-master.games.kobe")
+local Hjkl = require("vim-master.games.hjkl")
 local log = require("vim-master.log")
 
 local endStates = {
@@ -20,6 +21,8 @@ local games = {
 	end,
 	kobe = function(window)
 		return KobeRound:new(window)
+	hjkl = function(window)
+		return Hjkl:new(window)
 	end,
 }
 
@@ -179,13 +182,11 @@ function GameRunner:renderExplanation()
 	return lines
 end
 
-function linesAreEqual(current, expected)
-	-- Quick length check
+local function linesAreEqual(current, expected)
 	if #current ~= #expected then
 		return false
 	end
 
-	-- Compare all lines at once
 	return table.concat(current, "\n") == table.concat(expected, "\n")
 end
 
@@ -291,7 +292,10 @@ end
 
 function GameRunner:close()
 	log.info("GameRunner:close()", debug.traceback())
+	vim.on_key(nil, self.listenerId)
 	self.window.buffer:removeListener(self.onChange)
+	self.window.buffer:clearGameLines()
+	self.window.buffer:debugLine(nil)
 	self.ended = true
 end
 
@@ -410,8 +414,8 @@ function GameRunner:setupKeyRestrictions()
 		log.info("GameRunner:setupKeyRestrictions", key)
 		if not currentRound.keyset[key] then
 			gameRunner.hasLost = true
-			gameRunner:endGame()
 			gameRunner.round.lostReason = string.format("You pressed forbidden key: %s", key)
+			gameRunner:endGame()
 		end
 	end)
 
