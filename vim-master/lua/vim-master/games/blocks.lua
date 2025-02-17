@@ -22,7 +22,7 @@ function Blocks:new(window)
 end
 
 function Blocks:getInstructionsSummary()
-        return { "Use Vim motions to delete exactly the line marked with '// DELETE THIS' inside a code block" }
+        return { "Delete the entire code block that contains '// DELETE THIS'" }
 end
 
 local function generateCodeBlock(size)
@@ -58,12 +58,8 @@ function Blocks:setupGame()
                         block[lineToMark] = block[lineToMark] .. " // DELETE THIS"
                         targetLine = block[lineToMark]
                         
-                        -- Add all lines except the target to expected
-                        for j = 1, #block do
-                                if j ~= lineToMark then
-                                    table.insert(expected, block[j])
-                                end
-                        end
+                        -- Don't add this block to expected
+                        table.insert(expected, "")
                 else
                         -- Add all lines to expected
                         for _, line in ipairs(block) do
@@ -133,7 +129,7 @@ end
 
 Blocks.flag = "CSGAMES-BLOCK-DELETION-MASTER"
 
-Blocks.lostReason = "You deleted too much or too little! Delete exactly the marked line."
+Blocks.lostReason = "You deleted too much or too little! Delete exactly the block containing '// DELETE THIS'"
 
 Blocks.timeToWin = 20
 
@@ -144,42 +140,26 @@ function Blocks:getExplanation()
                 description = {
                         "In this game, you'll see a function with multiple code blocks.",
                         "One line inside a code block is marked with '// DELETE THIS'.",
-                        "Your task is to delete exactly that line using Vim motions.",
+                        "Your task is to delete the entire code block containing that line.",
+                        "A code block is a contiguous group of lines separated by empty lines.",
                 },
                 examples = {
-                        "Example: If you see a line '    // Code line 2 // DELETE THIS'",
-                        "You need to delete exactly that line, no more, no less.",
+                        "Example: If you see:",
+                        "    // Code line 1",
+                        "    // Code line 2 // DELETE THIS",
+                        "    // Code line 3",
+                        "",
+                        "You need to delete all three lines of that block.",
                 },
                 controls = {
-                        "j/k - Move up/down",
-                        "0 - Move to start of line",
-                        "$ - Move to end of line",
-                        "dd - Delete current line",
+                        "Use any Vim commands you want! All keys are allowed.",
+                        "Hint: Visual mode (v) and deletion (d) work well together.",
+                        "Hint: { and } move between paragraphs (blocks of text).",
                 }
         }
 end
 
-Blocks.keyset = {
-        -- Basic movement
-        h = true,
-        j = true,
-        k = true,
-        l = true,
-        -- Line movement
-        ['0'] = true,
-        ['$'] = true,
-        -- Deletion
-        d = true,
-        -- Numbers for repeat operations
-        ['1'] = true,
-        ['2'] = true,
-        ['3'] = true,
-        ['4'] = true,
-        ['5'] = true,
-        ['6'] = true,
-        ['7'] = true,
-        ['8'] = true,
-        ['9'] = true,
-}
+-- No keyset means all keys are allowed
+Blocks.keyset = nil
 
 return Blocks
