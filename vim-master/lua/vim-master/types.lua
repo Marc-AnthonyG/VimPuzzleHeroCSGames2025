@@ -2,6 +2,7 @@
 local games = {
     "words",
     "hjkl",
+    "blocks",
 }
 
 return {
