@@ -90,25 +90,12 @@ function Blocks:setupGame()
         return self.config
 end
 
--- Helper function to check if lines are equal
-local function linesAreEqual(lines1, lines2)
-        if #lines1 ~= #lines2 then
-                return false
-        end
-        for i = 1, #lines1 do
-                if lines1[i] ~= lines2[i] then
-                        return false
-                end
-        end
-        return true
-end
-
 function Blocks:checkForWin()
         local lines = self.window.buffer:getGameLines()
         local trimmed = GameUtils.trimLines(lines)
         local expected = GameUtils.trimLines(self.config.expected)
         
-        local winner = linesAreEqual(trimmed, expected)
+        local winner = GameUtils.linesAreEqual(trimmed, expected)
 
         if winner then
                 vim.cmd("stopinsert")
@@ -122,13 +109,8 @@ function Blocks:checkForLose()
         local trimmed = GameUtils.trimLines(lines)
         local originalLines = GameUtils.trimLines(self.config.lines)
         
-        -- If nothing has changed, not a loss
-        if linesAreEqual(trimmed, originalLines) then
-                return false
-        end
-        
-        -- If we've won, not a loss
-        if self:checkForWin() then
+        -- If nothing has changed or we've won, not a loss
+        if GameUtils.linesAreEqual(trimmed, originalLines) or self:checkForWin() then
                 return false
         end
         
@@ -137,7 +119,6 @@ function Blocks:checkForLose()
         local targetEnd = self.config.targetEnd
         
         for i = 1, #originalLines do
-                -- Skip the target block lines
                 if i < targetStart or i > targetEnd then
                         if trimmed[i] ~= originalLines[i] then
                                 vim.cmd("stopinsert")
