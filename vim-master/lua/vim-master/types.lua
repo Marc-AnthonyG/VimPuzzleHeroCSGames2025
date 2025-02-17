@@ -2,8 +2,7 @@
 local games = {
 	"words",
 	"kobe",
-    "words",
-    "hjkl",
+	"hjkl",
 }
 
 return {

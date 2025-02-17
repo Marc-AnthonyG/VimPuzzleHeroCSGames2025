@@ -19,10 +19,11 @@ local games = {
 	words = function(window)
 		return WordRound:new(window)
 	end,
-	kobe = function(window)
-		return KobeRound:new(window)
 	hjkl = function(window)
 		return Hjkl:new(window)
+	end,
+	kobe = function(window)
+		return KobeRound:new(window)
 	end,
 }
 
