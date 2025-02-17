@@ -42,11 +42,13 @@ function Blocks:setupGame()
         local numBlocks = math.random(3, 4)
         local targetBlock = math.random(1, numBlocks)
         local targetLine
-        local expected = {}
+        local expected = {"local function example() {"}
+        local targetStart, targetEnd
         
         for i = 1, numBlocks do
                 -- Add empty line before block
                 table.insert(lines, "")
+                table.insert(expected, "")
                 
                 -- Generate block with 3-5 lines
                 local blockSize = math.random(3, 5)
@@ -57,9 +59,8 @@ function Blocks:setupGame()
                         local lineToMark = math.random(1, #block)
                         block[lineToMark] = block[lineToMark] .. " // DELETE THIS"
                         targetLine = block[lineToMark]
-                        
-                        -- Don't add this block to expected
-                        table.insert(expected, "")
+                        targetStart = #lines + 1
+                        targetEnd = #lines + #block
                 else
                         -- Add all lines to expected
                         for _, line in ipairs(block) do
@@ -81,10 +82,25 @@ function Blocks:setupGame()
 
         self.config = {
                 lines = lines,
-                expected = expected
+                expected = expected,
+                targetStart = targetStart,
+                targetEnd = targetEnd
         }
 
         return self.config
+end
+
+-- Helper function to check if lines are equal
+local function linesAreEqual(lines1, lines2)
+        if #lines1 ~= #lines2 then
+                return false
+        end
+        for i = 1, #lines1 do
+                if lines1[i] ~= lines2[i] then
+                        return false
+                end
+        end
+        return true
 end
 
 function Blocks:checkForWin()
@@ -92,15 +108,7 @@ function Blocks:checkForWin()
         local trimmed = GameUtils.trimLines(lines)
         local expected = GameUtils.trimLines(self.config.expected)
         
-        local winner = #trimmed == #expected
-        if winner then
-                for i = 1, #trimmed do
-                        if trimmed[i] ~= expected[i] then
-                                winner = false
-                                break
-                        end
-                end
-        end
+        local winner = linesAreEqual(trimmed, expected)
 
         if winner then
                 vim.cmd("stopinsert")
@@ -112,15 +120,34 @@ end
 function Blocks:checkForLose()
         local lines = self.window.buffer:getGameLines()
         local trimmed = GameUtils.trimLines(lines)
+        local originalLines = GameUtils.trimLines(self.config.lines)
         
-        -- Lost if content changed but not correct
-        local lost = #trimmed ~= #self.config.lines and not self:checkForWin()
-
-        if lost then
-                vim.cmd("stopinsert")
+        -- If nothing has changed, not a loss
+        if linesAreEqual(trimmed, originalLines) then
+                return false
         end
-
-        return lost
+        
+        -- If we've won, not a loss
+        if self:checkForWin() then
+                return false
+        end
+        
+        -- Check if we've modified anything outside the target block
+        local targetStart = self.config.targetStart
+        local targetEnd = self.config.targetEnd
+        
+        for i = 1, #originalLines do
+                -- Skip the target block lines
+                if i < targetStart or i > targetEnd then
+                        if trimmed[i] ~= originalLines[i] then
+                                vim.cmd("stopinsert")
+                                return true
+                        end
+                end
+        end
+        
+        -- If we get here, we've only modified the target block but haven't won yet
+        return false
 end
 
 function Blocks:render()
