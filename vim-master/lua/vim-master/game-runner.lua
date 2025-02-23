@@ -27,7 +27,8 @@ local games = {
 	end,
 }
 
-local gameInstructionAknowledged = 'Delete this line to start the game'
+local gameInstructionAknowledged =
+	'Delete this line to start the game -- Supprimer cette ligne pour commencer la partie'
 
 ---@class GameResult
 ---@field timings number[]
@@ -310,21 +311,38 @@ function GameRunner:renderEndGame()
 
 	self.ended = true
 
-	table.insert(lines, string.format('Time to complete %.2f', totalTime))
+	table.insert(lines, string.format('Time to complete %.2f -- Temps pour completer %.2f', totalTime, totalTime))
 
 	if self.hasLost then
-		table.insert(lines, string.format('You lost! %s', self.round.lostReason))
+		table.insert(
+			lines,
+			string.format('You lost! %s -- Vous avez perdu! %s', self.round.lostReason, self.round.lostReason)
+		)
 	elseif totalTime < self.round.timeToWin then
-		table.insert(lines, string.format('Wow so fast here is the flag %s', self.round.flag))
+		table.insert(
+			lines,
+			string.format(
+				'Wow so fast here is the flag %s -- Wow tellement rapide voici le drapeau %s',
+				self.round.flag,
+				self.round.flag
+			)
+		)
 	else
-		table.insert(lines, string.format('You have to beat %s second to get my flag!', self.round.timeToWin))
+		table.insert(
+			lines,
+			string.format(
+				'You have to beat %s second to get my flag! -- Vous devez battre %s secondes pour avoir mon drapeau!',
+				self.round.timeToWin,
+				self.round.timeToWin
+			)
+		)
 	end
 
 	for _ = 1, 3 do
 		table.insert(lines, '')
 	end
 
-	table.insert(lines, 'Where do you want to go next? (Delete Line)')
+	table.insert(lines, 'Where do you want to go next? (Delete Line) -- Où voulez-vous aller? (Supprimer la ligne)')
 	local optionLine = #lines + 1
 
 	table.insert(lines, endStates.menu)
@@ -415,7 +433,8 @@ function GameRunner:setupKeyRestrictions()
 		log.info('GameRunner:setupKeyRestrictions', key)
 		if currentRound.keyset and not currentRound.keyset[key] then
 			gameRunner.hasLost = true
-			gameRunner.round.lostReason = string.format('You pressed forbidden key: %s', key)
+			gameRunner.round.lostReason =
+				string.format('You pressed forbidden key -- Vous avez appuyé sur une touche interdite: %s', key)
 			gameRunner:endGame()
 		end
 	end)

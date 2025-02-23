@@ -23,7 +23,7 @@ function Hjkl:new(window)
 end
 
 function Hjkl:getInstructionsSummary()
-	return { 'Use h,j,k,l and d to delete the X! Tips: number are authorized too!' }
+	return 'Use h,j,k,l and d to delete the X! Tips: number are authorized too! -- Utilisez h,j,k,l et d pour supprimer le X! Astuce: les nombres sont autorisés aussi!'
 end
 
 function Hjkl:setupGame()
@@ -90,7 +90,8 @@ end
 
 Hjkl.flag = 'CSGAMES-YAY-YOU-KNOW-HOW-TO-NOT-USE-ARROW'
 
-Hjkl.lostReason = 'You modified the board incorrectly! You should only delete the X.'
+Hjkl.lostReason =
+	'You modified the board incorrectly! You should only delete the X. -- Vous avez modifié le plateau incorrectement! Vous devez seulement supprimer le X.'
 
 Hjkl.timeToWin = 20
 
@@ -102,10 +103,17 @@ function Hjkl:getExplanation()
 			"In this game, you'll be presented with a grid with an X somewhere",
 			'Your task is to move the cursor to the X using the HJKL keys',
 			"Then you can use the 'd' key with hjkl to delete the x",
+			'',
+			'Dans ce jeu, une grille avec un X quelque part vous sera présentée',
+			'Votre tâche est de déplacer le curseur vers le X en utilisant les touches HJKL',
+			"Ensuite, vous pouvez utiliser la touche 'd' avec hjkl pour supprimer le x",
 		},
 		controls = {
 			'Use h, j, k, l to move the cursor',
 			'Use d to delete the X',
+			'',
+			'Utilisez h, j, k, l pour déplacer le curseur',
+			'Utilisez d pour supprimer le X',
 		},
 	}
 end

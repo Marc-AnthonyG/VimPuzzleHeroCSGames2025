@@ -22,7 +22,9 @@ function Blocks:new(window)
 end
 
 function Blocks:getInstructionsSummary()
-	return { "Delete the entire code block that contains '// DELETE THIS'" }
+	return {
+		"Delete the entire code block that contains '// DELETE THIS' -- Supprimez le bloc de code qui contient '// DELETE THIS'",
+	}
 end
 
 local function generateCodeBlock(size)
@@ -41,7 +43,6 @@ function Blocks:setupGame()
 	-- Generate 3-4 code blocks
 	local numBlocks = math.random(3, 4)
 	local targetBlock = math.random(1, numBlocks)
-	local targetLine
 	local expected = { 'local function example() {' }
 	local targetStart, targetEnd
 
@@ -58,7 +59,6 @@ function Blocks:setupGame()
 		if i == targetBlock then
 			local lineToMark = math.random(1, #block)
 			block[lineToMark] = block[lineToMark] .. ' // DELETE THIS'
-			targetLine = block[lineToMark]
 			targetStart = #lines + 1
 			targetEnd = #lines + #block
 		else
@@ -144,25 +144,35 @@ Blocks.timeToWin = 20
 ---@return GameExplanation
 function Blocks:getExplanation()
 	return {
-		title = 'Code Block Deletion Challenge',
+		title = 'Code Block Deletion Challenge -- Défi de suppression de bloc de code',
 		description = {
 			"In this game, you'll see a function with multiple code blocks.",
 			"One line inside a code block is marked with '// DELETE THIS'.",
 			'Your task is to delete the entire code block containing that line.',
 			'A code block is a contiguous group of lines separated by empty lines.',
+			'',
+			'Dans ce jeu, vous verrez une fonction avec plusieurs blocs de code.',
+			"Une ligne dans un bloc de code est marquée avec '// DELETE THIS'.",
+			'Votre tâche est de supprimer le bloc de code entier contenant cette ligne.',
+			'Un bloc de code est un groupe de lignes contiguës séparées par des lignes vides.',
 		},
 		examples = {
-			'Example: If you see:',
+			'Example: If you see: -- Exemple: Si vous voyez:',
 			'    // Code line 1',
 			'    // Code line 2 // DELETE THIS',
 			'    // Code line 3',
 			'',
 			'You need to delete all three lines of that block.',
+			'Vous devez supprimer les trois lignes de ce bloc.',
 		},
 		controls = {
 			'Use any Vim commands you want! All keys are allowed.',
 			'Hint: Visual mode (v) and deletion (d) work well together.',
 			'Hint: { and } move between paragraphs (blocks of text).',
+			'',
+			'Utilisez les commandes Vim que vous voulez! Toutes les touches sont permises.',
+			'Astuce: Le mode visuel (v) et la suppression (d) fonctionnent bien ensemble.',
+			'Astuce: { et } permettent de se déplacer entre les paragraphes (blocs de texte).',
 		},
 	}
 end

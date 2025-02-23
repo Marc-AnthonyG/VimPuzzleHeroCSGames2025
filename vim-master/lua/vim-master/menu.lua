@@ -7,6 +7,7 @@ local Menu = {}
 local gameHeader = {
 	'',
 	'Select a Game (delete from the list to select)',
+	'Sélectionnez un jeu (supprimez de la liste pour sélectionner)',
 	'----------------------------------------------',
 }
 
@@ -14,14 +15,21 @@ local instructions = {
 	'Welcome to Vim Master Challenge. This challenges is a collection',
 	'of small games intended to see if you are truly a vim master!',
 	'When completing a mini-game you will receive a flag.',
-	'To start a mini-game, delete the line of the game (Vd in normal mode)',
+	'To start a mini-game, delete the line of the game (`Vd` or `dd` in normal mode)',
 	'If at any point the game or the page glitch you can refresh the page to start a new session',
+	'',
+	'Bienvenue sur les défis Vim Master. Ce défi est une collection',
+	'de petits jeux conçus pour voir si vous êtes vraiment un maître vim !',
+	'Lorsque vous terminez un mini-jeu, vous recevrez un drapeau.',
+	'Pour commencer un mini-jeu, supprimez la ligne du jeu (`Vd` ou `dd` en mode normal)',
+	'Si à tout moment le jeu ou la page a un problème, vous pouvez actualiser la page pour démarrer une nouvelle session',
 }
 
 local credits = {
 	'',
 	'',
 	'This challenges is conceive from the awsome plugin VimBeGood created by ThePrimeagen',
+	'Ce défi est conçu à partir du formidable plugin VimBeGood créé par ThePrimeagen',
 	'https://github.com/ThePrimeagen/vim-master',
 }
 

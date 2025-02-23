@@ -25,6 +25,7 @@ end
 function Words:getInstructionsSummary()
 	return {
 		'use w, b, 0, $ and d to delete the different word in the line. Be careful to only delete the different word!',
+		'utilisez w, b, 0, $ et d pour supprimer le mot différent dans la ligne. Attention à ne supprimer que le mot différent !',
 	}
 end
 
@@ -36,8 +37,8 @@ function Words:setupGame()
 	end
 	local round = {}
 	local expected = {}
-	local idx = math.ceil(math.random() * 20)
-	for i = 1, 20 do
+	local idx = math.ceil(math.random() * 12)
+	for i = 1, 12 do
 		if i == idx then
 			table.insert(round, two)
 		else
@@ -108,10 +109,17 @@ function Words:getExplanation()
 			"In this game, you'll be presented with a line of similar words.",
 			'One word in the line is different from the others.',
 			'Your task is to delete the different word using Vim motions.',
+
+			'Dans ce jeu, une ligne de mots similaires vous sera présentée.',
+			'Un mot dans la ligne est différent des autres.',
+			'Votre tâche est de supprimer le mot différent en utilisant les mouvements Vim.',
 		},
 		examples = {
 			"Example: If you see: 'bar bar foo bar bar bar'",
 			"You need to delete 'foo' using commands like 'w' to move and 'dw' to delete",
+
+			"Exemple: Si vous voyez: 'bar bar foo bar bar bar'",
+			"Vous devez supprimer 'foo' en utilisant des commandes comme 'w' pour se déplacer et 'dw' pour supprimer",
 		},
 		controls = {
 			'w - Move to next word',
@@ -119,6 +127,12 @@ function Words:getExplanation()
 			'0 - Move to start of line',
 			'$ - Move to end of line',
 			'dw - Delete word',
+
+			'w - Aller au mot suivant',
+			'b - Aller au mot précédent',
+			'0 - Aller au début de la ligne',
+			'$ - Aller à la fin de la ligne',
+			'dw - Supprimer le mot',
 		},
 	}
 end
