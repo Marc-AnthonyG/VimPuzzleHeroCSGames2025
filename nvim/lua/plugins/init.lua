@@ -1,3 +1,3 @@
 return {
-	  { dir = "/root/.config/vim-master" },
+	{ dir = '/root/.config/vim-master' },
 }

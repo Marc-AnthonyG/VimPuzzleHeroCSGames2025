@@ -11,7 +11,6 @@
 ---@field lostReason string
 ---@field keyset table<string, boolean>
 
-
 ---@class GameExplanation
 ---@field title string
 ---@field description string[]
