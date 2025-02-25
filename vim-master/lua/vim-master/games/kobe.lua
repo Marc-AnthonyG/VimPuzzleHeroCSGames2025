@@ -1,7 +1,8 @@
 local GameUtils = require('vim-master.game-utils')
 local log = require('vim-master.log')
 
-local wrapWithBrackets
+local putBallInBasket
+local getBallAssociatedWithBasket
 
 ---@class KobeConfig
 ---@field roundTime number
@@ -48,14 +49,14 @@ function Kobe:setupGame()
 		third = positions[3],
 		fourth = positions[4],
 	}
-	local expected = string.rep('&', 20)
-		.. wrapWithBrackets(positions[1])
-		.. string.rep('|', 20)
-		.. wrapWithBrackets(positions[2])
-		.. string.rep('_', 20)
-		.. wrapWithBrackets(positions[3])
-		.. string.rep('|', 20)
-		.. wrapWithBrackets(positions[4])
+	local expected = string.rep('& ', 20)
+		.. putBallInBasket(positions[1])
+		.. string.rep(' | ', 20)
+		.. putBallInBasket(positions[2])
+		.. string.rep(' _ ', 20)
+		.. putBallInBasket(positions[3])
+		.. string.rep(' | ', 20)
+		.. putBallInBasket(positions[4])
 
 	self.config = {
 		basketArrangement = basketArrangement,
@@ -66,38 +67,31 @@ function Kobe:setupGame()
 end
 
 function Kobe:render()
-	local bracketBall = 'BracketBall'
-	local curlyBall = 'CurlyBall'
-	local doubleQuoteBall = 'DoubleQuoteBall'
-	local singleQuoteBall = 'SingleQuoteBall'
-
-	local lines = GameUtils.createEmpty(60)
+	local lines = GameUtils.createEmpty(30)
 	local cursorIdx = 1
 
-	lines[2] = bracketBall
-	lines[3] = curlyBall
-	lines[4] = doubleQuoteBall
-	lines[5] = singleQuoteBall
+	lines[2] = getBallAssociatedWithBasket(self.config.basketArrangement.first)
+	lines[3] = getBallAssociatedWithBasket(self.config.basketArrangement.third)
+	lines[4] = getBallAssociatedWithBasket(self.config.basketArrangement.fourth)
+	lines[5] = getBallAssociatedWithBasket(self.config.basketArrangement.second)
 
-	lines[6] = string.rep(' & ', 20)
-		.. self.config.basketArrangement.first:lower()
+	lines[7] = string.rep('& ', 20)
+		.. self.config.basketArrangement.first
 		.. string.rep(' | ', 20)
-		.. self.config.basketArrangement.second:lower()
+		.. self.config.basketArrangement.second
 		.. string.rep(' _ ', 20)
-		.. self.config.basketArrangement.third:lower()
+		.. self.config.basketArrangement.third
 		.. string.rep(' | ', 20)
-		.. self.config.basketArrangement.fourth:lower()
+		.. self.config.basketArrangement.fourth
 	return lines, cursorIdx
 end
 
 function Kobe:checkForWin()
-	log.info('Checking for win')
 	local lines = self.window.buffer:getGameLines()
 	local trimmed = GameUtils.trimLines(lines)
 	local concatenated = table.concat(GameUtils.filterEmptyLines(trimmed), '')
-	local lowercased = concatenated:lower()
 
-	local winner = lowercased == self.config.expected
+	local winner = concatenated == self.config.expected
 
 	if winner then
 		vim.cmd('stopinsert')
@@ -165,20 +159,33 @@ Kobe.keyset = {
 	g = true,
 }
 
-function wrapWithBrackets(ball)
-	if ball == 'BracketBall' then
-		return '[' .. ball .. ']'
+function putBallInBasket(basket)
+	if basket == '[]' then
+		return '[BracketBall]'
 	end
-	if ball == 'CurlyBall' then
-		return '{' .. ball .. '}'
+	if basket == '{}' then
+		return '{CurlyBall}'
 	end
-	if ball == 'DoubleQuoteBall' then
-		return '"' .. ball .. '"'
+	if basket == '""' then
+		return '"DoubleQuoteBall"'
 	end
-	if ball == 'SingleQuoteBall' then
-		return "'" .. ball .. "'"
+	if basket == "''" then
+		return "'SingleQuoteBall'"
 	end
-	return ball
 end
 
+function getBallAssociatedWithBasket(basket)
+	if basket == '[]' then
+		return 'BracketBall'
+	end
+	if basket == '{}' then
+		return 'CurlyBall'
+	end
+	if basket == '""' then
+		return 'DoubleQuoteBall'
+	end
+	if basket == "''" then
+		return 'SingleQuoteBall'
+	end
+end
 return Kobe
