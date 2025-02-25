@@ -156,7 +156,6 @@ Kobe.keyset = {
 
 	-- Find command
 	f = true,
-	g = true,
 }
 
 function putBallInBasket(basket)
