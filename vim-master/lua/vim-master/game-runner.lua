@@ -1,6 +1,7 @@
 local Blocks = require('vim-master.games.blocks')
 local GameUtils = require('vim-master.game-utils')
 local Hjkl = require('vim-master.games.hjkl')
+local Kobe = require('vim-master.games.kobe')
 local WordRound = require('vim-master.games.words')
 local log = require('vim-master.log')
 
@@ -23,7 +24,8 @@ local games = {
 		return Hjkl:new(window)
 	end,
 	kobe = function(window)
-		return KobeRound:new(window)
+		return Kobe:new(window)
+	end,
 	blocks = function(window)
 		return Blocks:new(window)
 	end,

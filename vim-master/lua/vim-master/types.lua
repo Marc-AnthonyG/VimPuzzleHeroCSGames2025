@@ -3,6 +3,7 @@ local games = {
 	'words',
 	'hjkl',
 	'blocks',
+	'kobe',
 }
 
 return {
