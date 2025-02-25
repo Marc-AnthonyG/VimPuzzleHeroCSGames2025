@@ -143,16 +143,16 @@ Kobe.keyset = {
 	p = true,
 
 	-- Text object operators
-	i = true, -- inner text object
-	a = true, -- around text object
+	i = true,
+	a = true,
 
 	-- Text objects
-	['['] = true, -- for bracket text objects
+	['['] = true,
 	[']'] = true,
-	['{'] = true, -- for curly brace text objects
+	['{'] = true,
 	['}'] = true,
-	["'"] = true, -- for single quote text objects
-	['"'] = true, -- for double quote text objects
+	["'"] = true,
+	['"'] = true,
 
 	-- Find command
 	f = true,
