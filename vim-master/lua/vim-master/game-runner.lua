@@ -259,6 +259,7 @@ function GameRunner:checkEndGameMenuSelection()
 end
 
 function GameRunner:checkForWinOrLost()
+	log.ingo('GameRunner:checkForWinOrLost')
 	if not self.round then
 		return
 	end

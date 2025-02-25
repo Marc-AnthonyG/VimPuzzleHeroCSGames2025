@@ -1,6 +1,8 @@
 local GameUtils = require('vim-master.game-utils')
 local log = require('vim-master.log')
 
+local wrapWithBrackets
+
 ---@class KobeConfig
 ---@field roundTime number
 ---@field words string[]
@@ -26,7 +28,7 @@ end
 
 function Kobe:getInstructionsSummary()
 	return {
-		"use v, w, p, y and f to yank the different 'balls' and paste them in the appropriate baskets.",
+		"use b, w, p, d and f to cut the different 'balls' and paste them in the appropriate baskets.",
 	}
 end
 
@@ -41,12 +43,19 @@ function Kobe:setupGame()
 	GameUtils.shuffle(positions)
 
 	local basketArrangement = {
-		south = positions[1],
-		east = positions[2],
-		center = positions[3],
-		southeast = positions[4],
+		first = positions[1],
+		second = positions[2],
+		third = positions[3],
+		fourth = positions[4],
 	}
-	local expected = positions[1] .. positions[2] .. positions[3] .. positions[4]
+	local expected = string.rep('&', 20)
+		.. wrapWithBrackets(positions[1])
+		.. string.rep('|', 20)
+		.. wrapWithBrackets(positions[2])
+		.. string.rep('_', 20)
+		.. wrapWithBrackets(positions[3])
+		.. string.rep('|', 20)
+		.. wrapWithBrackets(positions[4])
 
 	self.config = {
 		basketArrangement = basketArrangement,
@@ -70,16 +79,19 @@ function Kobe:render()
 	lines[4] = doubleQuoteBall
 	lines[5] = singleQuoteBall
 
-	lines[5] = string.rep(' ', 180) .. self.config.basketArrangement.east
-
-	lines[20] = string.rep(' ', 90) .. self.config.basketArrangement.center
-
-	lines[60] = self.config.basketArrangement.south .. string.rep(' ', 180) .. self.config.basketArrangement.southeast
-
+	lines[6] = string.rep(' & ', 20)
+		.. self.config.basketArrangement.first:lower()
+		.. string.rep(' | ', 20)
+		.. self.config.basketArrangement.second:lower()
+		.. string.rep(' _ ', 20)
+		.. self.config.basketArrangement.third:lower()
+		.. string.rep(' | ', 20)
+		.. self.config.basketArrangement.fourth:lower()
 	return lines, cursorIdx
 end
 
 function Kobe:checkForWin()
+	log.info('Checking for win')
 	local lines = self.window.buffer:getGameLines()
 	local trimmed = GameUtils.trimLines(lines)
 	local concatenated = table.concat(GameUtils.filterEmptyLines(trimmed), '')
@@ -114,9 +126,9 @@ function Kobe:getExplanation()
 			'Use your Vim skills to yank and paste the balls into their proper positions.',
 		},
 		controls = {
-			'v - Enter visual mode',
-			'w - Move to next word',
-			'y - Yank (copy) selection',
+			'w - Move to end of word',
+			'b - Move to previous word',
+			'd - Cut',
 			'p - Paste',
 			'f - Find and move to character',
 		},
@@ -125,20 +137,15 @@ end
 
 Kobe.keyset = {
 	-- Basic movement
-	h = true,
 	j = true,
 	k = true,
-	l = true,
-	g = true,
-
-	-- Visual mode
-	v = true,
 
 	-- Word movement
 	w = true,
+	b = true,
 
 	-- Yank and paste
-	y = true,
+	d = true,
 	p = true,
 
 	-- Text object operators
@@ -155,6 +162,23 @@ Kobe.keyset = {
 
 	-- Find command
 	f = true,
+	g = true,
 }
+
+function wrapWithBrackets(ball)
+	if ball == 'BracketBall' then
+		return '[' .. ball .. ']'
+	end
+	if ball == 'CurlyBall' then
+		return '{' .. ball .. '}'
+	end
+	if ball == 'DoubleQuoteBall' then
+		return '"' .. ball .. '"'
+	end
+	if ball == 'SingleQuoteBall' then
+		return "'" .. ball .. "'"
+	end
+	return ball
+end
 
 return Kobe
