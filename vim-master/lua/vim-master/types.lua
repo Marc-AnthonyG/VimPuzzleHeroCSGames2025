@@ -1,8 +1,8 @@
 -- refer to local game in game runner
 local games = {
-	"words",
-	"kobe",
-	"hjkl",
+	'words',
+	'hjkl',
+	'blocks',
 }
 
 return {

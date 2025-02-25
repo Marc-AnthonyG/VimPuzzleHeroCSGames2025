@@ -1,5 +1,5 @@
-local GameUtils = require("vim-master.game-utils")
-local log = require("vim-master.log")
+local GameUtils = require('vim-master.game-utils')
+local log = require('vim-master.log')
 
 ---@class HjklConfig
 ---@field lines string[]
@@ -13,7 +13,7 @@ local Hjkl = {}
 ---@param window Window
 ---@return Game
 function Hjkl:new(window)
-	log.info("New", window)
+	log.info('New', window)
 	local round = {
 		window = window,
 	}
@@ -23,7 +23,7 @@ function Hjkl:new(window)
 end
 
 function Hjkl:getInstructionsSummary()
-	return { "Use h,j,k,l and d to delete the X! Tips: number are authorized too!" }
+	return 'Use h,j,k,l and d to delete the X! Tips: number are authorized too! -- Utilisez h,j,k,l et d pour supprimer le X! Astuce: les nombres sont autorisés aussi!'
 end
 
 function Hjkl:setupGame()
@@ -35,7 +35,7 @@ function Hjkl:setupGame()
 	local xLine = 1
 	local cursorCol = 1
 	local cursorLine = 1
-	while (xLine == cursorLine or xCol == cursorCol) do
+	while xLine == cursorLine or xCol == cursorCol do
 		xCol = math.random(1, boardSize)
 		xLine = math.random(1, boardSize)
 		cursorCol = math.random(1, boardSize)
@@ -44,15 +44,15 @@ function Hjkl:setupGame()
 
 	local idx = 1
 	while idx <= #lines do
-		local line = ""
-		local lineWithoutX = ""
+		local line = ''
+		local lineWithoutX = ''
 
 		for i = 1, boardSize, 1 do
 			if xLine == idx and xCol == i then
-				line = line .. "x"
+				line = line .. 'x'
 			else
-				line = line .. "-"
-				lineWithoutX = lineWithoutX .. "-"
+				line = line .. '-'
+				lineWithoutX = lineWithoutX .. '-'
 			end
 		end
 
@@ -69,58 +69,52 @@ function Hjkl:setupGame()
 	}
 end
 
-local function areLinesSame(lines1, lines2)
-	if #lines1 ~= #lines2 then
-		return false
-	end
-
-	for i = 1, #lines1 do
-		if lines1[i] ~= lines2[i] then
-			return false
-		end
-	end
-
-	return true
-end
-
 function Hjkl:checkForWin()
 	local currentLines = self.window.buffer:getGameLines()
-	return areLinesSame(currentLines, self.config.boardWithoutX)
+	return GameUtils.linesAreEqual(currentLines, self.config.boardWithoutX)
 end
 
 function Hjkl:checkForLose()
 	local currentLines = self.window.buffer:getGameLines()
 
-	local matchesOriginal = areLinesSame(currentLines, self.config.board)
-	local matchesWithoutX = areLinesSame(currentLines, self.config.boardWithoutX)
+	local matchesOriginal = GameUtils.linesAreEqual(currentLines, self.config.board)
+	local matchesWithoutX = GameUtils.linesAreEqual(currentLines, self.config.boardWithoutX)
 
 	return not matchesOriginal and not matchesWithoutX
 end
 
 function Hjkl:render()
-	log.debug("hjkl render", vim.inspect(self.config.board))
+	log.debug('hjkl render', vim.inspect(self.config.board))
 	return self.config.board, self.config.cursorLine, self.config.cursorCol
 end
 
-Hjkl.flag = "CSGAMES-YAY-YOU-KNOW-HOW-TO-NOT-USE-ARROW"
+Hjkl.flag = 'CSGAMES-YAY-YOU-KNOW-HOW-TO-NOT-USE-ARROW'
 
-Hjkl.lostReason = "You modified the board incorrectly! You should only delete the X."
+Hjkl.lostReason =
+	'You modified the board incorrectly! You should only delete the X. -- Vous avez modifié le plateau incorrectement! Vous devez seulement supprimer le X.'
 
 Hjkl.timeToWin = 20
 
 ---@return GameExplanation
 function Hjkl:getExplanation()
 	return {
-		title = "HJKL Master Challenge",
+		title = 'HJKL Master Challenge',
 		description = {
 			"In this game, you'll be presented with a grid with an X somewhere",
-			"Your task is to move the cursor to the X using the HJKL keys",
+			'Your task is to move the cursor to the X using the HJKL keys',
 			"Then you can use the 'd' key with hjkl to delete the x",
+			'',
+			'Dans ce jeu, une grille avec un X quelque part vous sera présentée',
+			'Votre tâche est de déplacer le curseur vers le X en utilisant les touches HJKL',
+			"Ensuite, vous pouvez utiliser la touche 'd' avec hjkl pour supprimer le x",
 		},
 		controls = {
-			"Use h, j, k, l to move the cursor",
-			"Use d to delete the X",
-		}
+			'Use h, j, k, l to move the cursor',
+			'Use d to delete the X',
+			'',
+			'Utilisez h, j, k, l pour déplacer le curseur',
+			'Utilisez d pour supprimer le X',
+		},
 	}
 end
 

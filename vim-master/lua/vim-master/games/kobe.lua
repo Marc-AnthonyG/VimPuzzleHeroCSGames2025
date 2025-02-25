@@ -127,34 +127,31 @@ Kobe.keyset = {
 	j = true,
 	k = true,
 	l = true,
+
+	-- Visual mode
+	v = true,
+
 	-- Word movement
 	w = true,
-	b = true,
-	-- Shifted word movement
-	W = true, -- Move forward by WORD
-	B = true, -- Move backward by WORD
-	-- Line movement
-	["0"] = true,
-	["$"] = true,
-	I = true,
-	A = true,
-	-- Deletion
-	d = true,
-	D = true, -- Delete to end of line
-	-- Search
+
+	-- Yank and paste
+	y = true,
+	p = true,
+
+	-- Text object operators
+	i = true, -- inner text object
+	a = true, -- around text object
+
+	-- Text objects
+	["["] = true, -- for bracket text objects
+	["]"] = true,
+	["{"] = true, -- for curly brace text objects
+	["}"] = true,
+	["'"] = true, -- for single quote text objects
+	['"'] = true, -- for double quote text objects
+
+	-- Find command
 	f = true,
-	-- Goto
-	g = true,
-	-- Numbers for repeat operations
-	["1"] = true,
-	["2"] = true,
-	["3"] = true,
-	["4"] = true,
-	["5"] = true,
-	["6"] = true,
-	["7"] = true,
-	["8"] = true,
-	["9"] = true,
 }
 
 return Kobe
