@@ -138,7 +138,7 @@ Kobe.keyset = {
 	w = true,
 	b = true,
 
-	-- Yank and paste
+	-- Cut and paste
 	d = true,
 	p = true,
 
