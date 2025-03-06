@@ -53,7 +53,7 @@ local runningId = 0
 ---@field ended boolean
 ---@field hasLost boolean
 ---@field onChange function
----@field listenerId string
+---@field listenerId integer
 local GameRunner = {}
 
 local function getGame(game, window)
@@ -65,6 +65,11 @@ function GameRunner:new(selectedGames, window, onFinished)
 	local config = {
 		roundCount = 10,
 	}
+
+	if selectedGames[1] == 'kobe' then
+		log.info('GameRunner:new this is it!!!!!!!')
+		config.roundCount = 5
+	end
 
 	local rounds = {}
 	log.info('GameRunner:new', vim.inspect(selectedGames))
@@ -320,7 +325,7 @@ function GameRunner:renderEndGame()
 	if self.hasLost then
 		table.insert(
 			lines,
-			string.format('You lost! %s -- Vous avez perdu! %s', self.round.lostReason, self.round.lostReason)
+			string.format('You lost! -- Vous avez perdu! %s', self.round.lostReason, self.round.lostReason)
 		)
 	elseif totalTime < self.round.timeToWin then
 		table.insert(
@@ -426,6 +431,10 @@ function GameRunner:timer()
 end
 
 function GameRunner:setupKeyRestrictions()
+	if self.listenerId then
+		vim.on_key(nil, self.listenerId)
+	end
+
 	if not self.round.keyset then
 		return
 	end

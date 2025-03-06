@@ -132,12 +132,13 @@ function Blocks:checkForLose()
 end
 
 function Blocks:render()
-	return self.config.lines, 2
+	return self.config.lines, 10
 end
 
 Blocks.flag = 'CSGAMES-BLOCK-DELETION-MASTER'
 
-Blocks.lostReason = "You deleted too much or too little! Delete exactly the block containing '// DELETE THIS'"
+Blocks.lostReason =
+	"You deleted too much or too little! Delete exactly the block containing '// DELETE THIS' -- Vous avez supprimer pas assez ou trop! Supprimez seulement le block contenant '// DELETE THIS'"
 
 Blocks.timeToWin = 20
 

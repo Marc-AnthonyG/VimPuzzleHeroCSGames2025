@@ -23,7 +23,10 @@ function Hjkl:new(window)
 end
 
 function Hjkl:getInstructionsSummary()
-	return 'Use h,j,k,l and d to delete the X! Tips: number are authorized too! -- Utilisez h,j,k,l et d pour supprimer le X! Astuce: les nombres sont autorisés aussi!'
+	return {
+		'Use h,j,k,l and d to delete the X! Tips: number are authorized too!',
+		'Utilisez h,j,k,l et d pour supprimer le X! Astuce: les nombres sont autorisés aussi!',
+	}
 end
 
 function Hjkl:setupGame()
@@ -119,13 +122,13 @@ function Hjkl:getExplanation()
 end
 
 Hjkl.keyset = {
-	-- Basic movement
 	h = true,
 	j = true,
 	k = true,
 	l = true,
 	d = true,
 	D = true,
+	['0'] = true,
 	['1'] = true,
 	['2'] = true,
 	['3'] = true,
