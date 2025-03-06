@@ -109,7 +109,7 @@ Kobe.flag = 'CSGAMES-d542d95c58b0048295422b46cf0a4a93'
 
 Kobe.lostReason = ''
 
-Kobe.timeToWin = 20
+Kobe.timeToWin = 40
 
 ---@return GameExplanation
 function Kobe:getExplanation()
