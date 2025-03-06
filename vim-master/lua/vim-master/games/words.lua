@@ -31,10 +31,11 @@ end
 
 function Words:setupGame()
 	local one = GameUtils.getRandomWord()
-	local two = GameUtils.getRandomWord()
-	while two == one do
-		two = GameUtils.getRandomWord()
+	local temps = GameUtils.getRandomWord()
+	while temps == one do
+		temps = GameUtils.getRandomWord()
 	end
+	local two = temps:upper()
 	local round = {}
 	local expected = {}
 	local idx = math.ceil(math.random() * 12)
@@ -75,9 +76,8 @@ function Words:checkForLose()
 	local lines = self.window.buffer:getGameLines()
 	local trimmed = GameUtils.trimLines(lines)
 	local concatenated = table.concat(GameUtils.filterEmptyLines(trimmed), '')
-	local lowercased = concatenated:lower()
 
-	local lost = lowercased ~= self.config.default and not self:checkForWin()
+	local lost = concatenated ~= self.config.default and not self:checkForWin()
 
 	if lost then
 		vim.cmd('stopinsert')
@@ -90,16 +90,17 @@ function Words:render()
 	local lines = GameUtils.createEmpty(5)
 	local cursorIdx = 5
 
-	lines[5] = table.concat(self.config.words, ' ')
+	local gameLine = table.concat(self.config.words, ' ')
+	lines[5] = gameLine
 
-	return lines, cursorIdx
+	return lines, cursorIdx, math.floor(gameLine:len() / 2)
 end
 
 Words.flag = 'CSGAMES-WOW-YOU-ARE-SO-FAST'
 
 Words.lostReason = 'You deleted the wrong word!'
 
-Words.timeToWin = 20
+Words.timeToWin = 12
 
 ---@return GameExplanation
 function Words:getExplanation()
