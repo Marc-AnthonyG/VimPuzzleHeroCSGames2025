@@ -66,6 +66,11 @@ function GameRunner:new(selectedGames, window, onFinished)
 		roundCount = 10,
 	}
 
+	if selectedGames[1] == 'kobe' then
+		log.info('GameRunner:new this is it!!!!!!!')
+		config.roundCount = 5
+	end
+
 	local rounds = {}
 	log.info('GameRunner:new', vim.inspect(selectedGames))
 
