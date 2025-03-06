@@ -96,7 +96,7 @@ Hjkl.flag = 'CSGAMES-YAY-YOU-KNOW-HOW-TO-NOT-USE-ARROW'
 Hjkl.lostReason =
 	'You modified the board incorrectly! You should only delete the X. -- Vous avez modifié le plateau incorrectement! Vous devez seulement supprimer le X.'
 
-Hjkl.timeToWin = 25
+Hjkl.timeToWin = 20
 
 ---@return GameExplanation
 function Hjkl:getExplanation()

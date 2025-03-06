@@ -53,7 +53,7 @@ local runningId = 0
 ---@field ended boolean
 ---@field hasLost boolean
 ---@field onChange function
----@field listenerId string
+---@field listenerId integer
 local GameRunner = {}
 
 local function getGame(game, window)
@@ -426,6 +426,10 @@ function GameRunner:timer()
 end
 
 function GameRunner:setupKeyRestrictions()
+	if self.listenerId then
+		vim.on_key(nil, self.listenerId)
+	end
+
 	if not self.round.keyset then
 		return
 	end

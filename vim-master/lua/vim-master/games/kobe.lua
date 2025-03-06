@@ -30,6 +30,7 @@ end
 function Kobe:getInstructionsSummary()
 	return {
 		"use b, w, p, d and f to cut the different 'balls' and paste them in the appropriate baskets.",
+		"Utilisez b, w, p, d et f pour yank les 'balles' dans les paniers appropriées.",
 	}
 end
 
@@ -118,13 +119,19 @@ function Kobe:getExplanation()
 			"In this game, you'll be presented with different 'balls' that need to be placed in matching baskets.",
 			'Each ball type (Bracket, Curly, DoubleQuote, SingleQuote) must be moved to its corresponding basket.',
 			'Use your Vim skills to yank and paste the balls into their proper positions.',
+			'',
+			'Dans ce jeu, vous serez présenté avec des '
+				.. "'balles'"
+				.. ' différentes qui doivent être placées dans des paniers correspondants.',
+			'Chaque type de balle (Crochet, Accolade, GuillemetDouble, GuillemetSimple) doit être déplacé dans son panier correspondant.',
+			'Utilisez vos compétences Vim pour yanker les balles dans leurs positions appropriées.',
 		},
 		controls = {
-			'w - Move to end of word',
-			'b - Move to previous word',
-			'd - Cut',
-			'p - Paste',
-			'f - Find and move to character',
+			'w - Move to end of word - Allez à la fin du mot',
+			'b - Move to previous word - Allez au mot précédent',
+			'd - Cut - Couper',
+			'p - Paste - Coller',
+			'f - Find and move to character - Trouver et aller au caractère',
 		},
 	}
 end
