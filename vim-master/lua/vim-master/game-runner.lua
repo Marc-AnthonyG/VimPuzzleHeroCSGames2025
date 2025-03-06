@@ -320,7 +320,7 @@ function GameRunner:renderEndGame()
 	if self.hasLost then
 		table.insert(
 			lines,
-			string.format('You lost! %s -- Vous avez perdu! %s', self.round.lostReason, self.round.lostReason)
+			string.format('You lost! -- Vous avez perdu! %s', self.round.lostReason, self.round.lostReason)
 		)
 	elseif totalTime < self.round.timeToWin then
 		table.insert(
